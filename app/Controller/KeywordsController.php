@@ -74,44 +74,29 @@ class KeywordsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			
-			$this->Video->create();
+			$this->Keyword->create();
 			
-			$this->request->data['Video']['created_at'] =
+			$this->request->data['Keyword']['created_at'] =
 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
 			
-			$this->request->data['Video']['updated_at'] =
+			$this->request->data['Keyword']['updated_at'] =
 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
 			
-			if ($this->Video->save($this->request->data)) {
+			if ($this->Keyword->save($this->request->data)) {
 				
-				$this->Session->setFlash(__('Your video has been saved.'));
+				$this->Session->setFlash(
+						__("Keyword saved => ".$this->request->data['Keyword']['word']));
+// 				$this->Session->setFlash(__('Your keyword has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 				
 			}
-			$this->Session->setFlash(__('Unable to add your video.'));
+			$this->Session->setFlash(__('Unable to add your keyword.'));
+			
 		} else {
 			
-			$this->loadModel('Genre');
-			
-			$genres = $this->Genre->find('all');
-			
-			$select_Genres = array();
-			
-			foreach ($genres as $genre) {
-					
-				$genre_Name = $genre['Genre']['name'];
-				$genre_Id = $genre['Genre']['id'];
-					
-				$select_Genres[$genre_Id] = $genre_Name;
-					
-			}
-				
-			asort($select_Genres);
-			
-			$this->set('genre_names', $select_Genres);
-				
 		}
-	}
+		
+	}//public function add()
 
 	public function delete($id) {
 		/******************************

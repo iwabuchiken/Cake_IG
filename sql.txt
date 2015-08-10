@@ -5,14 +5,12 @@ sqlite3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\development.sqlite3
 .explain on
 .tables
 
-pragma table_info(admin);
-pragma table_info(tokens);
-
-pragma table_info(articles);
-pragma table_info(categories);
-pragma table_info(histories);
+pragma table_info(keywords);
 
 .exit
+
+SELECT * FROM keywords;
+
 
 [sqlite3]======================================
 CREATE TABLE keywords (
