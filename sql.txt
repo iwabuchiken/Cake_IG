@@ -1,0 +1,62 @@
+#pushd C:\WORKS\WS\Eclipse_Kepler\Cake_NR5\app\webroot
+#sqlite3 C:\WORKS\WS\Eclipse_Kepler\Cake_NR5\app\webroot\development.sqlite3
+
+sqlite3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\development.sqlite3
+.explain on
+.tables
+
+pragma table_info(admin);
+pragma table_info(tokens);
+
+pragma table_info(articles);
+pragma table_info(categories);
+pragma table_info(histories);
+
+.exit
+
+[sqlite3]======================================
+CREATE TABLE keywords (
+	id			INTEGER PRIMARY KEY     AUTOINCREMENT	NOT NULL,
+	created_at	VARCHAR(30),
+	updated_at	VARCHAR(30),
+	
+    word		VARCHAR(30),
+    
+    genre_id	INTEGER,
+    
+    type_id		INTEGER,
+
+    memo		VARCHAR(50)
+	
+);
+
+DROP TABLE keywords;
+
+#REF	http://razorsql.com/features/sqlite_add_column.html
+ALTER TABLE histories ADD updates VARCHAR(200);
+
+
+[mysql(lollipop)]======================================
+#REF http://sql-info.de/mysql/examples/CREATE-TABLE-examples.html
+
+CREATE TABLE keywords (
+	id			INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+
+	created_at	VARCHAR(30),
+	updated_at	VARCHAR(30),
+	
+    word		VARCHAR(30),
+    
+    genre_id	INTEGER,
+    
+    type_id		INTEGER,
+
+    memo		VARCHAR(50)
+	
+);
+
+DROP TABLE keywords;
+
+#REF http://www.tech-recipes.com/rx/378/add-a-column-to-an-existing-mysql-table/
+ALTER TABLE histories ADD updates VARCHAR(200);
+

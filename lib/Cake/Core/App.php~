@@ -219,14 +219,18 @@ class App {
  */
 	public static function path($type, $plugin = null) {
 		
-		if (!empty(static::$legacy[$type])) {
-			$type = static::$legacy[$type];
+// 		//test
+// 		debug("type => ".$type);
+// 		echo "type => ".$type;
+		
+		if (!empty(self::$legacy[$type])) {
+			$type = self::$legacy[$type];
 		}
 
 		if (!empty($plugin)) {
 			$path = array();
 			$pluginPath = CakePlugin::path($plugin);
-			$packageFormat = static::_packageFormat();
+			$packageFormat = self::_packageFormat();
 			if (!empty($packageFormat[$type])) {
 				foreach ($packageFormat[$type] as $f) {
 					$path[] = sprintf($f, $pluginPath);
@@ -235,10 +239,10 @@ class App {
 			return $path;
 		}
 
-		if (!isset(static::$_packages[$type])) {
+		if (!isset(self::$_packages[$type])) {
 			return array();
 		}
-		return static::$_packages[$type];
+		return self::$_packages[$type];
 	}
 
 /**

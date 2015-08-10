@@ -1,0 +1,15 @@
+2015-08-10 02:22:52 Error: [MissingHelperException] Helper class MytestHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MytestHelper',
+  'plugin' => false,
+)
+Request URL: /Eclipse_Luna/Cake_IG/keywords
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(907): HelperCollection->load('Mytest', Array)
+#1 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(354): View->loadHelpers()
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Controller.php(1247): View->__construct(Object(KeywordsController))
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Controller.php(946): Controller->_getViewObject()
+#4 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#5 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(KeywordsController), Object(CakeRequest))
+#6 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
