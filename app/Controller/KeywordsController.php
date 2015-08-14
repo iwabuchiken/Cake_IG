@@ -2,9 +2,31 @@
 
 class KeywordsController extends AppController {
 
+	public $components = array('Paginator');
+	
 	public function 
 	index() {
 
+		/**********************************
+		 * paginate data
+		**********************************/
+		$page_limit = 10;
+		
+		$opt_order = array('id' => 'asc');
+		
+		$this->paginate = array(
+				// 					'conditions' => array('Image.file_name LIKE' => "%$filter_TableName%"),
+		// 				'conditions' => array('Image.memos LIKE' => "%$filter_TableName%"),
+				'limit' => $page_limit,
+				'order' => $opt_order,
+// 				'conditions'	=> $opt_conditions
+				// 				'order' => array(
+						// 						'id' => 'asc'
+						// 				)
+		);
+		
+		$this->set('keywords', $this->paginate('Keyword'));
+		
 	}
 
 	public function view($id = null) {
@@ -12,62 +34,12 @@ class KeywordsController extends AppController {
 			throw new NotFoundException(__('Invalid video'));
 		}
 	
-		$video = $this->Video->findById($id);
-		if (!$video) {
+		$keyword = $this->Keyword->findById($id);
+		if (!$keyword) {
 			throw new NotFoundException(__('Invalid video'));
 		}
 		
-		$this->set('video', $video);
-		
-		/******************************
-		
-			positions
-		
-		******************************/
-		$this->loadModel('Position');
-			
-		$positions = $this->Position->find('all',
-							//REF conditions http://book.cakephp.org/2.0/en/models/retrieving-your-data.html#find
-							array(
-								'conditions' => array(
-													'Position.video_id' => $id
-			
-												)
-// 								,
-// 								'order' => array('Position.point ASC')
-							)
-		);
-		
-		
-		$positions = $this->sort_Position_by_Point($positions);
-// 		$res = $this->sort_Position_by_Point($positions);
-
-// 		debug($positions);
-		
-// 		if ($res == true) {
-		
-// 			debug("sort done");
-			
-// 		} else {
-		
-// 			debug("sort not done");
-		
-// 		}
-
-		//REF http://blogs.bigfish.tv/adam/2008/03/24/sorting-with-setsort-in-cakephp-12/
-		//REF referer http://cakephp.1045679.n5.nabble.com/Using-usort-in-Cake-td1327099.html Aug 10, 2009; 11:32pm
-// 		$positions = Set::sort($positions, '{n}.Position.point', 'asc');
-		
-		$this->set('positions', $positions);
-		
-		/******************************
-		
-			test: SimpleXMLElement
-		
-		******************************/
-		$this->_test_SimpleXMLElement();
-// 		$this->_test_DOMXML();
-
+		$this->set('keyword', $keyword);
 		
 	}
 	
@@ -105,13 +77,19 @@ class KeywordsController extends AppController {
 	
 		******************************/
 		if (!$id) {
-			throw new NotFoundException(__('Invalid video id'));
+			throw new NotFoundException(__('Invalid keyword id'));
+			
+			return;
+			
 		}
 	
-		$video = $this->Video->findById($id);
+		$keyword = $this->Keyword->findById($id);
 	
-		if (!$video) {
-			throw new NotFoundException(__("Can't find the video. id = %d", $id));
+		if (!$keyword) {
+			throw new NotFoundException(__("Can't find the keyword. id = %d", $id));
+			
+			return;
+			
 		}
 	
 		/******************************
@@ -119,14 +97,14 @@ class KeywordsController extends AppController {
 		delete
 	
 		******************************/
-		if ($this->Video->delete($id)) {
-			// 		if ($this->Video->save($this->request->data)) {
+		if ($this->Keyword->delete($id)) {
+			// 		if ($this->Keyword->save($this->request->data)) {
 				
-			$this->Session->setFlash(__("Video deleted => %s", $video['Video']['title']));
+			$this->Session->setFlash(__("Keyword deleted => %s", $keyword['Keyword']['word']));
 				
 			return $this->redirect(
 					array(
-							'controller' => 'videos',
+							'controller' => 'keywords',
 							'action' => 'index'
 							
 					));
@@ -134,13 +112,13 @@ class KeywordsController extends AppController {
 		} else {
 				
 			$this->Session->setFlash(
-					__("Video can't be deleted => %s", $video['Video']['title']));
+					__("Keyword can't be deleted => %s", $keyword['Keyword']['title']));
 				
 			// 			$page_num = _get_Page_from_Id($id - 1);
 				
 			return $this->redirect(
 					array(
-							'controller' => 'videos',
+							'controller' => 'keywords',
 							'action' => 'view',
 							$id
 					));

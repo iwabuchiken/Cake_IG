@@ -73,3 +73,36 @@ Stack Trace:
 #3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(907): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-08-14 04:49:31 Error: [MissingHelperException] Helper class KeywordHelper could not be found.
+Exception Attributes: array (
+  'class' => 'KeywordHelper',
+  'plugin' => false,
+)
+Request URL: /Eclipse_Luna/Cake_IG/keywords
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('Keyword')
+#1 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(858): HelperCollection->__isset('Keyword')
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\View\Elements\keywords\index_t_entries.ctp(26): View->__get('Keyword')
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(971): include('C:\\WORKS\\WS\\Ecl...')
+#4 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(933): View->_evaluate('C:\\WORKS\\WS\\Ecl...', Array)
+#5 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(1227): View->_render('C:\\WORKS\\WS\\Ecl...', Array)
+#6 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(418): View->_renderElement('C:\\WORKS\\WS\\Ecl...', Array, Array)
+#7 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\View\Keywords\index.ctp(11): View->element('keywords/index_...')
+#8 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(971): include('C:\\WORKS\\WS\\Ecl...')
+#9 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(933): View->_evaluate('C:\\WORKS\\WS\\Ecl...', Array)
+#10 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(473): View->_render('C:\\WORKS\\WS\\Ecl...')
+#11 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Controller.php(960): View->render(NULL, NULL)
+#12 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#13 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(KeywordsController), Object(CakeRequest))
+#14 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-08-14 04:55:44 Error: Fatal Error (1): Call to a member function findById() on null in [C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\Controller\KeywordsController.php, line 37]
+2015-08-14 04:55:44 Error: [FatalErrorException] Call to a member function findById() on null
+Request URL: /Eclipse_Luna/Cake_IG/keywords/view/1
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\WORKS\\WS\\Ecl...', 37)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\WORKS\\WS\\Ecl...', 37, Array)
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(934): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\WORKS\\WS\\Ecl...', 37, Array)
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(907): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
