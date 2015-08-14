@@ -44,4 +44,14 @@
 	
 ?>
 
+<hr>
+
+<?php echo $this->Html->link("Back to list",
+							array(
+								'controller' => 'keywords', 
+								'action' => 'index')
+							); 
+?>
+
+
 <!-- <div id="add_kw_ajax">abc</div> -->

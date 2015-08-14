@@ -106,3 +106,27 @@ Stack Trace:
 #3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(907): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-08-14 05:09:24 Error: [MissingViewException] View file "Keywords\get_keywords_mix.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Keywords\\get_keywords_mix.ctp',
+)
+Request URL: /Eclipse_Luna/Cake_IG/keywords/get_keywords_mix/3
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Controller.php(960): View->render(NULL, NULL)
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(KeywordsController), Object(CakeRequest))
+#4 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-08-14 05:11:39 Error: [MissingViewException] View file "Keywords\get_keywords_mix.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Keywords\\get_keywords_mix.ctp',
+)
+Request URL: /Eclipse_Luna/Cake_IG/keywords/get_keywords_mix/3
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Controller.php(960): View->render(NULL, NULL)
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(KeywordsController), Object(CakeRequest))
+#4 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

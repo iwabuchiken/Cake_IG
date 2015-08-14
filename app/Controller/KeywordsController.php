@@ -167,4 +167,83 @@ class KeywordsController extends AppController {
 	
 	}//public function edit($id = null)
 	
+	public function get_keywords_mix($num) {
+		
+		/*******************************
+			get: all keywords
+		*******************************/
+		$keywords = $this->Keyword->find('all');
+// 		$keywords = count($this->Keyword->find('all'));
+		
+		/*******************************
+			get keywords: num
+		*******************************/
+		// get total number
+		$total = count($keywords);
+
+		debug("total => ");
+		
+		debug($total);
+		
+		// adjust number
+		$num = ($num > $total) ? $total : $num;
+		
+		debug("num => adjusted");
+		
+		debug($num);
+		
+		srand(time());
+		
+		// id array
+		$ids = array();
+		
+		// found
+		$found = 0;
+		
+		while($found < $num) {
+			
+			$id = rand(0, $total - 1);
+			
+			if (!in_array($id, $ids)) {
+				
+				array_push($ids, $id);
+				
+				$found += 1;
+				
+			}
+			
+		}
+		
+// 		for ($i = 0; $i < $num; $i++) {
+			
+// 			$id = rand(0, $total - 1);
+			
+// 			array_push($ids, $id);
+			
+// 		}
+		
+		debug($ids);
+		
+// 		debug(time());
+		
+		/*******************************
+			build: keywords list
+		*******************************/
+		$kw_selected = array();
+		
+		foreach ($ids as $i) {
+			
+			array_push($kw_selected, $keywords[$i]);
+			
+		}
+		
+		debug($kw_selected);
+		
+		/*******************************
+			render
+		*******************************/
+		$this->layout = 'plain';
+		
+	}
+	
 }//class ArticlesController extends AppController

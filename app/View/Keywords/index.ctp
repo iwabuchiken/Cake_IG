@@ -18,3 +18,13 @@
 								'action' => 'add')
 							); 
 ?>
+|
+<?php echo $this->Html->link("keyword mix",
+							array(
+								'controller' => 'keywords', 
+								'action'	=> 'get_keywords_mix',
+								3)
+// 								'num'		=> 4)
+							); 
+?>
+
