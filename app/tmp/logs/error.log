@@ -763,3 +763,12 @@ Request URL: /Eclipse_Luna/Cake_IG/css/main.css
 Stack Trace:
 #0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-08-15 10:54:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
