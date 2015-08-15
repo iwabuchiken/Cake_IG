@@ -223,9 +223,37 @@ function _get_kw_mix__Done(data) {
 //	'{ "firstName":"Anna" , "lastName":"Smith" },' +
 //	'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
 	
-	var obj = JSON.parse(text);
+//	alert(text);
 	
-	alert("parsed");
+//	var obj = JSON.parse(text);
+//	alert("parsed");
+	
+	var obj = JSON.parse(data);
+	alert("data => parsed" + "(" + obj.count + ")");
+	
+	//REF https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+	//REF referer http://stackoverflow.com/questions/15209136/how-to-count-length-of-the-json-array-element answered Mar 4 '13 at 19:35
+//	alert(Object.keys(obj));
+	
+//	alert(obj[0]);
+	
+//	alert(Object.keys(obj[0]));
+	
+	var k_1 = obj[0]['Keyword'];
+	
+	alert(Object.keys(k_1));
+	
+	alert(k_1['word']);
+	
+//	alert(k_1);
+//	alert(obj[0]['Keyword']);
+	
+//	// get one keyword obj
+//	var kw = obj[0];
+////	var kw = obj.keyword[0];
+//	
+//	alert(kw);
+////	alert(kw.id);
 	
 	/***************************
 		decode

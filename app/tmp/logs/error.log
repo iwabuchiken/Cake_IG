@@ -772,3 +772,243 @@ Request URL: /Eclipse_Luna/Cake_IG/css/main.css
 Stack Trace:
 #0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-08-15 11:06:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:06:08 Error: [MissingHelperException] Helper class MainAHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MainAHelper',
+  'plugin' => false,
+)
+Request URL: /Eclipse_Luna/Cake_IG/keywords
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(907): HelperCollection->load('MainA', Array)
+#1 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\View\View.php(354): View->loadHelpers()
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Controller.php(1247): View->__construct(Object(KeywordsController))
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Controller.php(946): Controller->_getViewObject()
+#4 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#5 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(KeywordsController), Object(CakeRequest))
+#6 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2015-08-15 11:06:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:06:12 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:07:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:07:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:15:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:15:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:17:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:19:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:21:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:22:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:28:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:29:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:29:49 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:37:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:38:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:38:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:39:02 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:41:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:41:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:41:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:42:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:43:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:43:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 11:44:04 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Eclipse_Luna/Cake_IG/css/main.css
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

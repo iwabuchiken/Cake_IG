@@ -1,5 +1,3 @@
-<!-- keyword mix -->
-
 <?php 
 
 // 	echo count($kw_selected);
@@ -15,6 +13,12 @@
 	
 // // 	echo $str;
 // 	echo $str_new;
+	
+// 	echo  $this->Main->conv_KWList_2_JSONList($kw_selected);
+// 	echo $this->Main->conv_KWList_2_JSONList($kw_selected);
+
+// 	echo "<br>";
+// 	echo "<br>";
 	
 	echo json_encode($kw_selected);
 

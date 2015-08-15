@@ -2,6 +2,8 @@
 
 class KeywordsController extends AppController {
 
+	public $helpers = array('Html', 'Form', 'Main');
+	
 	public $components = array('Paginator');
 	
 	public function 
