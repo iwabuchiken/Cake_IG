@@ -167,7 +167,8 @@ class KeywordsController extends AppController {
 	
 	}//public function edit($id = null)
 	
-	public function get_keywords_mix($num) {
+	public function get_keywords_mix($num = 3) {
+// 	public function get_keywords_mix($num) {
 		
 		/*******************************
 			get: all keywords
@@ -181,16 +182,16 @@ class KeywordsController extends AppController {
 		// get total number
 		$total = count($keywords);
 
-		debug("total => ");
+// 		debug("total => ");
 		
-		debug($total);
+// 		debug($total);
 		
 		// adjust number
 		$num = ($num > $total) ? $total : $num;
 		
-		debug("num => adjusted");
+// 		debug("num => adjusted");
 		
-		debug($num);
+// 		debug($num);
 		
 		srand(time());
 		
@@ -222,7 +223,7 @@ class KeywordsController extends AppController {
 			
 // 		}
 		
-		debug($ids);
+// 		debug($ids);
 		
 // 		debug(time());
 		
@@ -236,13 +237,23 @@ class KeywordsController extends AppController {
 			array_push($kw_selected, $keywords[$i]);
 			
 		}
+
+		/*******************************
+			set
+		*******************************/
+		$this->set('kw_selected', $kw_selected);
 		
-		debug($kw_selected);
+		
+// 		debug($kw_selected);
 		
 		/*******************************
 			render
 		*******************************/
 		$this->layout = 'plain';
+		
+	}
+	
+	public function get_keywords_mix_Main() {
 		
 	}
 	

@@ -1,0 +1,18 @@
+<?php 
+
+$options_Submit = array(
+		'label' => 'Mix',
+		'id' => 'submit',
+		'onclick' => "show_msg()"
+// 		'onclick' => "alert('YES')"
+);
+
+echo $this->Form->create('Get mix');
+
+//REF http://stackoverflow.com/questions/6360767/form-end-without-a-div-in-cakephp answered Jun 15 '11 at 17:06
+echo $this->Form->submit("Get mix", $options_Submit);
+// echo $this->Form->submit("Get mix");
+
+
+
+?>
