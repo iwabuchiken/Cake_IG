@@ -170,6 +170,11 @@ class KeywordsController extends AppController {
 	public function get_keywords_mix($num = 3) {
 // 	public function get_keywords_mix($num) {
 		
+		Utils::write_Log(
+					Utils::get_dPath_Log(),
+					"get_keywords_mix: num = ".$num,
+					__FILE__, __LINE__);
+		
 		/*******************************
 			get: all keywords
 		*******************************/
