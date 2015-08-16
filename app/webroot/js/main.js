@@ -197,47 +197,47 @@ function _get_kw_mix__Done(data) {
 	/***************************
 			change color
 		 ***************************/
-		$label = $('#message_area');
-		
-		$label.css("background", "white");
+	$label = $('#message_area');
+	
+	$label.css("background", "white");
 
 	alert(data);
 
-//	alert(data.length);
-	
-//	var text = '{ "employees" : {' +					//=> n/w
-//	'{ "firstName":"John" , "lastName":"Doe" },' +
-//	'{ "firstName":"Anna" , "lastName":"Smith" },' +
-//	'{ "firstName":"Peter" , "lastName":"Jones" } }}';
-	var text = '{ "employees" : [' +					//=> w
-	'{ "firstName":"John" , "lastName":"Doe" },' +
-	'{ "firstName":"Anna" , "lastName":"Smith" },' +
-	'{ "firstName":"Peter" , "lastName":"Jones" } ],'+
-	'"employees" : [' +
-	           	'{ "firstName":"John" , "lastName":"Doe" },' +
-	           	'{ "firstName":"Anna" , "lastName":"Smith" },' +
-	           	'{ "firstName":"Peter" , "lastName":"Jones" } ]' +
-	'}';
-//	var text = '{ "employees" : [' +
-//	'{ "firstName":"John" , "lastName":"Doe" },' +
-//	'{ "firstName":"Anna" , "lastName":"Smith" },' +
-//	'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
-	
-//	alert(text);
-	
-//	var obj = JSON.parse(text);
-//	alert("parsed");
-	
+	/***************************
+		parse JSON
+	 ***************************/
 	var obj = JSON.parse(data);
 	alert("data => parsed" + "(" + obj.count + ")");
+
+	var kws = [];
+//	var kws = {};
 	
-	//REF https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
-	//REF referer http://stackoverflow.com/questions/15209136/how-to-count-length-of-the-json-array-element answered Mar 4 '13 at 19:35
-//	alert(Object.keys(obj));
+//	alert(obj.count);
+	alert(Object.keys(obj));
 	
-//	alert(obj[0]);
+	alert(obj[0]);
+	alert(Object.keys(obj[0]));
 	
-//	alert(Object.keys(obj[0]));
+	var len_obj = Object.keys(obj).length;
+	
+	for (var i = 0; i < len_obj; i ++) {
+//		for (var i = 0; i < obj.count; i ++) {
+		
+		kws[i] = obj[i]['Keyword'];
+//		kws[i] = obj[i];
+		
+	}
+	
+	var msg = "kws[0] => " + kws[0]['word'] + "/"
+			+ "kws[1] => " + kws[1]['word'] + "/"
+			+ "kws[2] => " + kws[2]['word'];
+	
+	alert(msg);
+//	alert("kws[0] => " + kws[0]['word']);
+	
+//	alert("kws[0] => " + kws[0]['Keyword']['word']);	//=> w
+	
+//	alert("kws.length => " + kws.length);
 	
 	var k_1 = obj[0]['Keyword'];
 	
