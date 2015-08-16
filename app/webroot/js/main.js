@@ -201,82 +201,37 @@ function _get_kw_mix__Done(data) {
 	
 	$label.css("background", "white");
 
-	alert(data);
+//	alert(data);
 
-	/***************************
-		parse JSON
-	 ***************************/
-	var obj = JSON.parse(data);
-	alert("data => parsed" + "(" + obj.count + ")");
-
-	var kws = [];
-//	var kws = {};
-	
-//	alert(obj.count);
-	alert(Object.keys(obj));
-	
-	alert(obj[0]);
-	alert(Object.keys(obj[0]));
-	
-	var len_obj = Object.keys(obj).length;
-	
-	for (var i = 0; i < len_obj; i ++) {
-//		for (var i = 0; i < obj.count; i ++) {
-		
-		kws[i] = obj[i]['Keyword'];
-//		kws[i] = obj[i];
-		
-	}
-	
-	var msg = "kws[0] => " + kws[0]['word'] + "/"
-			+ "kws[1] => " + kws[1]['word'] + "/"
-			+ "kws[2] => " + kws[2]['word'];
-	
-	alert(msg);
-//	alert("kws[0] => " + kws[0]['word']);
-	
-//	alert("kws[0] => " + kws[0]['Keyword']['word']);	//=> w
-	
-//	alert("kws.length => " + kws.length);
-	
-	var k_1 = obj[0]['Keyword'];
-	
-	alert(Object.keys(k_1));
-	
-	alert(k_1['word']);
-	
-//	alert(k_1);
-//	alert(obj[0]['Keyword']);
-	
-//	// get one keyword obj
-//	var kw = obj[0];
-////	var kw = obj.keyword[0];
-//	
-//	alert(kw);
-////	alert(kw.id);
-	
-	/***************************
-		decode
-	 ***************************/
-//	var j = JSON.parse(data);
-//	
-//	alert("parsed");
-//	alert(j);
-	
-//	var j = data;
-//	
-////	alert(j.length);
-//	
-////	j_cropped = j.substring(20, j.length - 10);
-//	j_cropped = j.substring(20, j.length - 1);
-////	j_cropped = j.substring(2,j.length - 1);
-//	
-//	alert(j_cropped);
-//    obj = JSON.parse(j);
+//	/***************************
+//		parse JSON
+//	 ***************************/
+//	var obj = JSON.parse(data);
 //
-//	alert(obj.count);
+//	var kws = [];
+//	
+//	var len_obj = Object.keys(obj).length;
+//	
+//	for (var i = 0; i < len_obj; i ++) {
+//		
+//		kws[i] = obj[i]['Keyword'];
+//		
+//	}
+//	
+//	var msg = "kws[0] => " + kws[0]['word'] + "/"
+//			+ "kws[1] => " + kws[1]['word'] + "/"
+//			+ "kws[2] => " + kws[2]['word'];
+//	
+////	alert(msg);
 	
-}
+	/***************************
+		show keywords
+	 ***************************/
+//	$label.html(msg);
+	$label.html(data);
+//	$label.text(msg);
+	
+}//function _get_kw_mix__Done(data)
 
 $(document).ready(function(){
 

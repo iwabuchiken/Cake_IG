@@ -1,25 +1,120 @@
 <?php 
 
-// 	echo count($kw_selected);
-	
-// 	print_r($kw_selected);
-
-// 	$str = json_encode($kw_selected);
-
-// 	$str_new = substr($str, 1, strlen($str) - 2);
-// // 	$str_new = substr($str, 10, strlen($str) - 10);
-// // 	$str_new = substr($str, 10, strlen($str) - 2);
-// // 	$str_new = $str.substr(10, strlen($str) - 1);
-	
-// // 	echo $str;
-// 	echo $str_new;
-	
-// 	echo  $this->Main->conv_KWList_2_JSONList($kw_selected);
-// 	echo $this->Main->conv_KWList_2_JSONList($kw_selected);
-
-// 	echo "<br>";
-// 	echo "<br>";
-	
-	echo json_encode($kw_selected);
+// 	echo json_encode($kw_selected);
 
 ?>
+
+<table id="table_kw_selected" bordr="4" style="width: 40%;">
+<!-- <table id="table_kw_selected" style="border: 1"> -->
+
+	<tr>
+		<td
+			style="color: black; border: 1px solid black; width: 10%; text-align: center;"
+		>
+			Word
+		</td>
+	
+		<?php foreach ($kw_selected as $kw) { ?>
+		<td 
+			style="color: blue; border: 1px solid black; width: 10%; text-align: center;" 
+			class="td_basic_1"
+			>
+		
+			<?php 
+				echo $kw['Keyword']['word'];
+			?>
+			
+		</td>
+		<?php } ?>
+	</tr>
+	
+	<!-- ID -->
+	<tr>
+		<td
+			style="color: black; border: 1px solid black; width: 10%; text-align: center;"
+		>
+			ID
+		</td>
+	
+		<?php foreach ($kw_selected as $kw) { ?>
+		<td 
+			style="color: blue; border: 1px solid black; width: 10%; text-align: center;" 
+			class="td_basic_1"
+			>
+		
+			<?php 
+				echo $kw['Keyword']['id'];
+			?>
+			
+		</td>
+		<?php } ?>
+	</tr>
+	
+	<!-- memo -->
+	<tr>
+		<td
+			style="color: black; border: 1px solid black; width: 10%; text-align: center;"
+		>
+			Memo
+		</td>
+	
+		<?php foreach ($kw_selected as $kw) { ?>
+		<td 
+			style="color: blue; border: 1px solid black; width: 10%; text-align: center;" 
+			class="td_basic_1"
+			>
+		
+			<?php 
+				echo $kw['Keyword']['memo'];
+			?>
+			
+		</td>
+		<?php } ?>
+	</tr>
+	
+	<!-- Genre -->
+	<tr>
+		<td
+			style="color: black; border: 1px solid black; width: 10%; text-align: center;"
+		>
+			Genre
+		</td>
+	
+		<?php foreach ($kw_selected as $kw) { ?>
+		<td 
+			style="color: blue; border: 1px solid black; width: 10%; text-align: center;" 
+			class="td_basic_1"
+			>
+		
+			<?php 
+				echo $kw['Keyword']['genre_id'];
+			?>
+			
+		</td>
+		<?php } ?>
+	</tr>
+	
+	<!-- Type -->
+	<tr>
+		<td
+			style="color: black; border: 1px solid black; width: 10%; text-align: center;"
+		>
+			Type
+		</td>
+	
+		<?php foreach ($kw_selected as $kw) { ?>
+		<td 
+			style="color: blue; border: 1px solid black; width: 10%; text-align: center;" 
+			class="td_basic_1"
+			>
+		
+			<?php 
+				echo $kw['Keyword']['type_id'];
+			?>
+			
+		</td>
+		<?php } ?>
+	</tr>
+	
+
+</table>

@@ -1,4 +1,6 @@
-<button type="button" onclick="get_kw_mix()">Click Me!</button>
+<!-- <button type="button" onclick="get_kw_mix()">Click Me!</button> -->
+
+<a class="button" onclick="get_kw_mix()">Click Me!</a>
 
 <br>
 <br>
