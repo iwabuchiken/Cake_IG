@@ -233,6 +233,14 @@ function _get_kw_mix__Done(data) {
 	
 }//function _get_kw_mix__Done(data)
 
+function show_composition_area() {
+	
+	var div = $('#area_composition');
+	
+	div.css("display", "inline");	
+	
+}//show_composition_area
+
 $(document).ready(function(){
 
 //	alert("ready");

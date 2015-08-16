@@ -4,12 +4,12 @@
 
 ?>
 
-<table id="table_kw_selected" bordr="4" style="width: 40%;">
+<table class="table_kw_selected" bordr="4" style="width: 40%;">
+<!-- <table id="table_kw_selected" bordr="4" style="width: 40%;"> -->
 <!-- <table id="table_kw_selected" style="border: 1"> -->
 
 	<tr>
-		<td
-			style="color: black; border: 1px solid black; width: 10%; text-align: center;"
+		<td class="td_header"
 		>
 			Word
 		</td>
@@ -30,8 +30,7 @@
 	
 	<!-- ID -->
 	<tr>
-		<td
-			style="color: black; border: 1px solid black; width: 10%; text-align: center;"
+		<td class="td_header"
 		>
 			ID
 		</td>
@@ -52,8 +51,7 @@
 	
 	<!-- memo -->
 	<tr>
-		<td
-			style="color: black; border: 1px solid black; width: 10%; text-align: center;"
+		<td class="td_header"
 		>
 			Memo
 		</td>
@@ -74,8 +72,7 @@
 	
 	<!-- Genre -->
 	<tr>
-		<td
-			style="color: black; border: 1px solid black; width: 10%; text-align: center;"
+		<td class="td_header"
 		>
 			Genre
 		</td>
@@ -96,8 +93,7 @@
 	
 	<!-- Type -->
 	<tr>
-		<td
-			style="color: black; border: 1px solid black; width: 10%; text-align: center;"
+		<td class="td_header"
 		>
 			Type
 		</td>
@@ -118,3 +114,7 @@
 	
 
 </table>
+
+<br>
+
+<a class="button" onclick="show_composition_area()">Compose</a>

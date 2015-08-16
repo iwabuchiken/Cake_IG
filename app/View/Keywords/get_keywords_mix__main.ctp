@@ -26,3 +26,34 @@
 ?>
 
 <div id="message_area">Message</div>
+
+<br>
+
+<div id="area_composition">
+
+	<?php 
+	
+		$opt = array(
+		
+		// 			'onmouseover' => 'show_msg();',
+				'onmouseover' => 'this.select();',
+				// 			'onmouseover' => 'this.select(); show_msg();',
+				'rows' => '1',
+					
+				'div'	=> null,
+
+				'class'	=> 'add_name'
+				// 			'cols'	=> '10'
+		// 			'width'	=> '100px'
+		// 			'columns'	=> '5'
+					
+					
+		);
+		
+		echo $this->Form->input('Compose', $opt);
+		
+	?>
+
+	<a class="button" onclick="">Submit</a>
+	
+</div>
