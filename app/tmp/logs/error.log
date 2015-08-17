@@ -1210,3 +1210,13 @@ Request URL: /Eclipse_Luna/Cake_IG/css/main.css
 Stack Trace:
 #0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-08-16 11:33:19 Error: Fatal Error (1): Call to undefined function random() in [C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\View\Keywords\get_keywords_mix.ctp, line 126]
+2015-08-16 11:33:19 Error: [FatalErrorException] Call to undefined function random()
+Request URL: /Eclipse_Luna/Cake_IG/keywords/get_keywords_mix/3
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\WORKS\\WS\\Ecl...', 126)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\WORKS\\WS\\Ecl...', 126, Array)
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(934): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\WORKS\\WS\\Ecl...', 126, Array)
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(907): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

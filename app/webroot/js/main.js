@@ -233,6 +233,7 @@ function _get_kw_mix__Done(data) {
 	
 }//function _get_kw_mix__Done(data)
 
+
 function show_composition_area() {
 	
 	var div = $('#area_composition');
@@ -240,6 +241,17 @@ function show_composition_area() {
 	div.css("display", "inline");	
 	
 }//show_composition_area
+
+function submit_composition() {
+	
+//	alert("submit");
+	
+	var div = $('div#kw_word_1');
+//	var div = $('#kw_data');
+	
+	alert(div.text());
+	
+}//submit_composition
 
 $(document).ready(function(){
 

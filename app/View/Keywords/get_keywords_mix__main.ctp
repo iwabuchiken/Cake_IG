@@ -54,6 +54,6 @@
 		
 	?>
 
-	<a class="button" onclick="">Submit</a>
+	<a class="button" onclick="submit_composition();">Submit</a>
 	
 </div>

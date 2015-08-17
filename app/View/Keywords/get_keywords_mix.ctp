@@ -118,3 +118,41 @@
 <br>
 
 <a class="button" onclick="show_composition_area()">Compose</a>
+
+<div id="kw_data" style="display: none">
+
+	<?php 
+		$count = 1;
+		
+		foreach ($kw_selected as $kw) { 
+	?>
+	<div id="kw_word_<?php echo $count; ?>">
+			<?php 
+				echo $kw['Keyword']['word'];
+			?>
+			
+	</div>
+	<div id="kw_id_<?php echo $count; ?>">
+			<?php 
+				echo $kw['Keyword']['id'];
+			?>
+			
+	</div>
+	<br>
+	<?php 
+	
+			$count += 1;
+		}
+			
+			echo "\n";
+	?>
+	
+
+<!-- 	AABBCC -->
+
+	<?php 
+// 		srand(time());
+// 		echo "AAA + ".rand(1,100); 
+	?>
+
+</div>
