@@ -307,3 +307,6 @@
 [08/17/2015 12:27:32 : \app\Controller\SensController.php : 91] add() => starts
 [08/17/2015 12:29:41 : \app\Controller\SensController.php : 91] add() => starts
 [08/17/2015 12:29:41 : \app\Controller\SensController.php : 150] no post method
+[08/17/2015 12:33:37 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:33:59 : \app\Controller\SensController.php : 91] add() => starts
+[08/17/2015 12:33:59 : \app\Controller\SensController.php : 120] saved => 

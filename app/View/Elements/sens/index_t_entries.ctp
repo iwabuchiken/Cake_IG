@@ -17,6 +17,8 @@
 							); ?>
 		</td>
 		
+		<td class="td_news_time"><?php echo $sen['Sen']['kws']; ?></td>
+		
 		<td class="td_news_time"><?php echo $sen['Sen']['memo']; ?></td>
 		
 		<td class="td_news_time"><?php echo $sen['Sen']['created_at']; ?></td>

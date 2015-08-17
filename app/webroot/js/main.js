@@ -288,7 +288,7 @@ function submit_composition() {
 	$.ajax({
 		
 	    url: url,
-	    type: "GET",
+	    type: "POST",
 	    //REF http://stackoverflow.com/questions/1916309/pass-multiple-parameters-to-jquery-ajax-call answered Dec 16 '09 at 17:37
 	//    data: {id: id},
 	    
@@ -296,9 +296,9 @@ function submit_composition() {
 	    
 	}).done(function(data, status, xhr) {
 	
-	//	alert(data);
+		alert(data);
 		
-		_get_kw_mix__Done(data);
+//		_get_kw_mix__Done(data);
 		
 	}).fail(function(xhr, status, error) {
 		
