@@ -6,6 +6,7 @@ sqlite3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\development.sqlite3
 .tables
 
 pragma table_info(keywords);
+pragma table_info(sens);
 
 .exit
 
@@ -29,6 +30,21 @@ CREATE TABLE keywords (
 );
 
 DROP TABLE keywords;
+
+CREATE TABLE sens (
+	id			INTEGER PRIMARY KEY     AUTOINCREMENT	NOT NULL,
+	created_at	VARCHAR(30),
+	updated_at	VARCHAR(30),
+	
+    text		TEXT,
+    
+    kws			VARCHAR(50),
+    
+    memo		TEXT
+	
+);
+
+DROP TABLE sens;
 
 #REF	http://razorsql.com/features/sqlite_add_column.html
 ALTER TABLE histories ADD updates VARCHAR(200);
@@ -54,6 +70,22 @@ CREATE TABLE keywords (
 );
 
 DROP TABLE keywords;
+
+CREATE TABLE sens (
+	id			INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	created_at	VARCHAR(30),
+	updated_at	VARCHAR(30),
+	
+    text		TEXT,
+    
+    kws			VARCHAR(50),
+    
+    memo		TEXT
+	
+);
+
+DROP TABLE sens;
+
 
 #REF http://www.tech-recipes.com/rx/378/add-a-column-to-an-existing-mysql-table/
 ALTER TABLE histories ADD updates VARCHAR(200);
