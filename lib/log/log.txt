@@ -294,3 +294,16 @@
 [08/17/2015 11:38:17 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
 [08/17/2015 11:38:22 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
 [08/17/2015 11:38:23 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:06:02 : \app\Controller\SensController.php : 54] add() => starts
+[08/17/2015 12:06:39 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:08:31 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:09:51 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:12:43 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:13:46 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:14:16 : \app\Controller\SensController.php : 91] add() => starts
+[08/17/2015 12:26:16 : \app\Controller\SensController.php : 91] add() => starts
+[08/17/2015 12:26:52 : \app\Controller\SensController.php : 91] add() => starts
+[08/17/2015 12:27:01 : \app\Controller\SensController.php : 91] add() => starts
+[08/17/2015 12:27:32 : \app\Controller\SensController.php : 91] add() => starts
+[08/17/2015 12:29:41 : \app\Controller\SensController.php : 91] add() => starts
+[08/17/2015 12:29:41 : \app\Controller\SensController.php : 150] no post method

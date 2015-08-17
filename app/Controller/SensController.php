@@ -44,27 +44,110 @@ class SensController extends AppController {
 	}
 	
 	public function add() {
+
+		//debug
+		$msg = "add() => starts";
+		
+		Utils::write_Log(
+						Utils::get_dPath_Log(),
+						$msg,
+						__FILE__, __LINE__);
+
+		// add instance
 		if ($this->request->is('post')) {
 			
-			$this->Keyword->create();
+			$this->Sen->create();
 			
-			$this->request->data['Keyword']['created_at'] =
+			$this->request->data['Sen']['created_at'] =
 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
 			
-			$this->request->data['Keyword']['updated_at'] =
+			$this->request->data['Sen']['updated_at'] =
 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
 			
-			if ($this->Keyword->save($this->request->data)) {
+			if ($this->Sen->save($this->request->data)) {
 				
 				$this->Session->setFlash(
-						__("Keyword saved => ".$this->request->data['Keyword']['word']));
-// 				$this->Session->setFlash(__('Your keyword has been saved.'));
+						__("Sen saved => ".$this->request->data['Sen']['word']));
+// 				$this->Session->setFlash(__('Your sen has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 				
 			}
-			$this->Session->setFlash(__('Unable to add your keyword.'));
+			$this->Session->setFlash(__('Unable to add your sen.'));
 			
 		} else {
+			
+		}
+		
+	}//public function add()
+
+	public function add_by_submission() {
+
+		//debug
+		$msg = "add() => starts";
+		
+		Utils::write_Log(
+						Utils::get_dPath_Log(),
+						$msg,
+						__FILE__, __LINE__);
+
+		// add instance
+		if ($this->request->is('post')) {
+			
+			$this->Sen->create();
+			
+			$this->request->data['Sen']['created_at'] =
+						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
+			
+			$this->request->data['Sen']['updated_at'] =
+						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
+			
+			if ($this->Sen->save($this->request->data)) {
+				
+				$this->Session->setFlash(
+						__("Sen saved => ".$this->request->data['Sen']['word']));
+// 				$this->Session->setFlash(__('Your sen has been saved.'));
+// 				return $this->redirect(array('action' => 'index'));
+
+				// set response string
+				$this->set("response", "saved");
+				
+				//debug
+				$msg = "saved => ".$this->request->data['Sen']['text'];
+				
+				Utils::write_Log(
+							Utils::get_dPath_Log(),
+							$msg,
+							__FILE__, __LINE__);
+							
+				return;
+				
+			} else {
+				
+				// set response string
+				$this->set("response", "not saved");
+				
+				//debug
+				$msg = "NOT saved => ".$this->request->data['Sen']['text'];
+				
+				Utils::write_Log(
+						Utils::get_dPath_Log(),
+						$msg,
+						__FILE__, __LINE__);
+				
+			}
+			
+		} else {
+
+			// set response string
+			$this->set("response", "no post method");
+			
+			//debug
+			$msg = "no post method";
+			
+			Utils::write_Log(
+						Utils::get_dPath_Log(),
+						$msg,
+						__FILE__, __LINE__);
 			
 		}
 		

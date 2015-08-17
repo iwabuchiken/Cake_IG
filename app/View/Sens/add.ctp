@@ -1,7 +1,7 @@
-<h1>Add Keyword</h1>
+<h1>Add Sen</h1>
 <?php
 
-	$opt_input_name = array(
+	$opt_input_memo = array(
 				
 // 			'onmouseover' => 'show_msg();',
 			'onmouseover' => 'this.select();',
@@ -33,14 +33,15 @@
 			
 	);
 
-	echo $this->Form->create('Keyword');
+	echo $this->Form->create('Sen');
 	
-	echo $this->Form->input('word', $opt_input_name);
-	echo $this->Form->input('memo', $opt_input_name);
-	echo $this->Form->input('genre_id', $opt_input_genre);
-	echo $this->Form->input('type_id', $opt_input_genre);
+	echo $this->Form->input('text', $opt_input_memo);
 	
-	echo $this->Form->end('Save Keyword');
+	echo $this->Form->input('kws', $opt_input_memo);
+	
+	echo $this->Form->input('memo', $opt_input_memo);
+	
+	echo $this->Form->end('Save Sen');
 	
 ?>
 
@@ -48,7 +49,7 @@
 
 <?php echo $this->Html->link("Back to list",
 							array(
-								'controller' => 'keywords', 
+								'controller' => 'sens', 
 								'action' => 'index')
 							); 
 ?>

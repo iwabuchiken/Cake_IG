@@ -251,6 +251,62 @@ function submit_composition() {
 	
 	alert(div.text());
 	
+	var sen = $('textarea#Compose');
+	
+//	alert(sen.val());
+//	alert(sen.text());
+	
+	/***************************
+		change color
+	 ***************************/
+//	$label = $('#message_area');
+	
+	sen.css("background", "yellow");
+	
+	/***************************
+		set: url
+	 ***************************/
+	var hostname = window.location.hostname;
+	
+	var url;
+	
+	if (hostname == "benfranklin.chips.jp") {
+		
+		url = "/cake_apps/Cake_IG/sens/add_by_submission";
+		
+	} else {
+	
+		url = "/Eclipse_Luna/Cake_IG/sens/add_by_submission";
+	
+	}
+	
+	alert(url);
+	
+	/***************************
+		ajax
+	 ***************************/
+	$.ajax({
+		
+	    url: url,
+	    type: "GET",
+	    //REF http://stackoverflow.com/questions/1916309/pass-multiple-parameters-to-jquery-ajax-call answered Dec 16 '09 at 17:37
+	//    data: {id: id},
+	    
+	    timeout: 10000
+	    
+	}).done(function(data, status, xhr) {
+	
+	//	alert(data);
+		
+		_get_kw_mix__Done(data);
+		
+	}).fail(function(xhr, status, error) {
+		
+		alert(xhr.status);
+		
+	});
+	
+	
 }//submit_composition
 
 $(document).ready(function(){
