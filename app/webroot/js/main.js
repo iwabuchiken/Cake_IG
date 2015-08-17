@@ -249,7 +249,7 @@ function submit_composition() {
 	var div = $('div#kw_word_1');
 //	var div = $('#kw_data');
 	
-	alert(div.text());
+//	alert(div.text());
 	
 	var sen = $('textarea#Compose');
 	
@@ -280,7 +280,7 @@ function submit_composition() {
 	
 	}
 	
-	alert(url);
+//	alert(url);
 	
 	/***************************
 		ajax
@@ -290,13 +290,15 @@ function submit_composition() {
 	    url: url,
 	    type: "POST",
 	    //REF http://stackoverflow.com/questions/1916309/pass-multiple-parameters-to-jquery-ajax-call answered Dec 16 '09 at 17:37
-	//    data: {id: id},
+	    data: {"data[Sen][text]": sen.val()},
+//	    data: {"data[Sen][kws]": sen.val()},
 	    
 	    timeout: 10000
 	    
 	}).done(function(data, status, xhr) {
 	
-		alert(data);
+//		alert(data);
+		_submit_composition__Done(data);
 		
 //		_get_kw_mix__Done(data);
 		
@@ -309,6 +311,28 @@ function submit_composition() {
 	
 }//submit_composition
 
+function _submit_composition__Done(data) {
+	
+	/***************************
+		dispatch
+	 ***************************/
+	var sen = $('textarea#Compose');
+	
+	if (data == "saved") {
+		
+//		alert("saved");
+		
+		sen.css("background", "aquamarine");
+		
+	} else {
+
+		alert("message is => " + data);
+		
+		sen.css("background", "burlywood");
+		
+	}
+	
+}
 $(document).ready(function(){
 
 //	alert("ready");

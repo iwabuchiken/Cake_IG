@@ -82,6 +82,11 @@ class SensController extends AppController {
 
 	public function add_by_submission() {
 
+		/*******************************
+			layout
+		*******************************/
+		$this->layout = 'plain';
+		
 		//debug
 		$msg = "add() => starts";
 		
@@ -103,8 +108,8 @@ class SensController extends AppController {
 			
 			if ($this->Sen->save($this->request->data)) {
 				
-				$this->Session->setFlash(
-						__("Sen saved => ".$this->request->data['Sen']['word']));
+// 				$this->Session->setFlash(
+// 						__("Sen saved => ".$this->request->data['Sen']['word']));
 // 				$this->Session->setFlash(__('Your sen has been saved.'));
 // 				return $this->redirect(array('action' => 'index'));
 

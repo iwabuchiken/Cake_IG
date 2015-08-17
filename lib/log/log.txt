@@ -310,3 +310,42 @@
 [08/17/2015 12:33:37 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
 [08/17/2015 12:33:59 : \app\Controller\SensController.php : 91] add() => starts
 [08/17/2015 12:33:59 : \app\Controller\SensController.php : 120] saved => 
+[08/17/2015 12:41:13 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:41:23 : \app\Controller\SensController.php : 91] add() => starts
+[08/17/2015 12:41:23 : \app\Controller\SensController.php : 120] saved => 
+[08/17/2015 12:42:18 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:42:23 : \app\Controller\SensController.php : 91] add() => starts
+[08/17/2015 12:42:23 : \app\Controller\SensController.php : 120] saved => Y Ishiguro のアップロード動画
+[08/17/2015 12:44:01 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:44:01 : \app\Controller\SensController.php : 155] no post method
+[08/17/2015 12:44:13 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:44:13 : \app\Controller\SensController.php : 125] saved => Y Ishiguro のアップロード動画
+[08/17/2015 12:44:32 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:44:39 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:44:39 : \app\Controller\SensController.php : 125] saved => $this->layout = 'plain';
+[08/17/2015 12:45:23 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:45:23 : \app\Controller\SensController.php : 125] saved => $this->layout = 'plain';
+[08/17/2015 12:45:31 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:45:44 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:45:44 : \app\Controller\SensController.php : 125] saved => CakePHPから文字列を直接表示する。phpinfoを表示する.
+[08/17/2015 12:48:43 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:48:54 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:48:54 : \app\Controller\SensController.php : 125] saved => Inch-time の「Cloud Hidden」 (eMusic • iTunes)
+[08/17/2015 12:49:15 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:49:15 : \app\Controller\SensController.php : 125] saved => Inch-time の「Cloud Hidden」 (eMusic • iTunes)
+[08/17/2015 12:49:53 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:50:08 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:50:08 : \app\Controller\SensController.php : 125] saved => １．統一教会の文鮮明が、ＣＩＡ＝ロックフェラーの極東エ－ジェントに任命された。
+[08/17/2015 12:50:34 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:50:34 : \app\Controller\SensController.php : 125] saved => １．統一教会の文鮮明が、ＣＩＡ＝ロックフェラーの極東エ－ジェントに任命された。
+[08/17/2015 12:50:59 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:50:59 : \app\Controller\SensController.php : 125] saved => １．統一教会の文鮮明が、ＣＩＡ＝ロックフェラーの極東エ－ジェントに任命された。
+[08/17/2015 12:51:17 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:51:17 : \app\Controller\SensController.php : 125] saved => ヒトラーはジョージ５世の息子
+[08/17/2015 12:51:31 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:51:34 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:51:34 : \app\Controller\SensController.php : 125] saved => ヒトラーはジョージ５世の息子
+[08/17/2015 12:51:40 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:51:44 : \app\Controller\KeywordsController.php : 178] get_keywords_mix: num = 3
+[08/17/2015 12:51:47 : \app\Controller\SensController.php : 96] add() => starts
+[08/17/2015 12:51:47 : \app\Controller\SensController.php : 125] saved => ヒトラーはジョージ５世の息子
