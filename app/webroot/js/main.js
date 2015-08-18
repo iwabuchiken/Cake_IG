@@ -243,24 +243,75 @@ function show_composition_area() {
 }//show_composition_area
 
 function submit_composition() {
+
+	/***************************
+		get: data
+	 ***************************/
+	var w_1 = $('div#kw_word_1');
+	var w_2 = $('div#kw_word_2');
+	var w_3 = $('div#kw_word_3');
 	
-//	alert("submit");
+	var id_1 = $('div#kw_id_1');
+	var id_2 = $('div#kw_id_2');
+	var id_3 = $('div#kw_id_3');
 	
-	var div = $('div#kw_word_1');
-//	var div = $('#kw_data');
+	var id_str_1 = id_1.text();
 	
-//	alert(div.text());
+	var len_1 = id_str_1.length;
+	
+	var tmp = "";
+	
+//	tmp = tmp +  id_str_1.substring(0,1);
+//	tmp = tmp +  "/";
+//	
+//	tmp = tmp +  id_str_1.substring(1,2);
+//	tmp = tmp +  "/";
+//	tmp += id_str_1(0,1);
+//	tmp += "/";
+//	
+//	tmp += id_str_1(1,2);
+//	tmp += "/";
+	
+	for (var i = 0; i < len_1 - 1; i++) {
+		
+		tmp += "(" + i + ")";
+		
+		tmp += id_str_1.substring(i, i + 1);
+//		tmp += id_str_1(i, i + 1);
+		
+//		tmp += "/";
+		
+	}
+	
+//	alert("id_1 => " + tmp + "[" + len_1 + "]");
+//	alert("id_1 => " + $.trim(id_str_1) + "[" + len_1 + "]");
+//	alert("id_1 => " + $.trim(tmp) + "[" + len_1 + "]");
+//	alert("id_1 => " + id_str_1 + "(" + id_str_1.substring(0,1) + ")");
+//	alert("id_1 => " + id_str_1 + "(" + id_str_1.length + ")");
+//	alert("id_1 => " + id_1.text() + "(" + id_1.text().length + ")");
+	
+//	var ids = id_1.text + " "
+//				+ id_2.text + " " 
+//				+ id_3.text + " "; 
+//	var ids = id_1.text() + " "
+//	+ id_2.text() + " " 
+//	+ id_3.text() + " "; 
+//	var ids = id_1.text().substring(4,5) + " "
+//	+ id_2.text().substring(4,5) + " " 
+//	+ id_3.text().substring(4,5) + " "; 
+	
+	//REF trim http://stackoverflow.com/questions/4637942/how-can-i-truncate-a-string-in-jquery answered Jan 9 '11 at 6:19
+	var ids = $.trim(id_1.text()) + " "
+	+ $.trim(id_2.text()) + " " 
+	+ $.trim(id_3.text()); 
+	
+//	alert("ids => " + ids + "[" + ids.length + "]");
 	
 	var sen = $('textarea#Compose');
-	
-//	alert(sen.val());
-//	alert(sen.text());
 	
 	/***************************
 		change color
 	 ***************************/
-//	$label = $('#message_area');
-	
 	sen.css("background", "yellow");
 	
 	/***************************
@@ -282,6 +333,7 @@ function submit_composition() {
 	
 //	alert(url);
 	
+//	alert("ajax starting... => " + url);
 	/***************************
 		ajax
 	 ***************************/
@@ -290,7 +342,10 @@ function submit_composition() {
 	    url: url,
 	    type: "POST",
 	    //REF http://stackoverflow.com/questions/1916309/pass-multiple-parameters-to-jquery-ajax-call answered Dec 16 '09 at 17:37
-	    data: {"data[Sen][text]": sen.val()},
+	    data: {
+	    		"data[Sen][text]": sen.val(),
+	    		"data[Sen][kws]":	ids
+	    		},
 //	    data: {"data[Sen][kws]": sen.val()},
 	    
 	    timeout: 10000

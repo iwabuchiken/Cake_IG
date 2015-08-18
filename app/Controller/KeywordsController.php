@@ -258,7 +258,16 @@ class KeywordsController extends AppController {
 		*******************************/
 		$this->layout = 'plain';
 		
-	}
+		/*******************************
+			log
+		*******************************/
+		Utils::write_Log(
+					Utils::get_dPath_Log(),
+					"get_keywords_mix => set ",
+					__FILE__, __LINE__);
+		
+		
+	}//get_keywords_mix($num = 3)
 	
 	public function get_keywords_mix_Main() {
 		
