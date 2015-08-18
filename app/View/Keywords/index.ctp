@@ -1,8 +1,11 @@
 <h1>
-	Keywords 
+	Keywords  (<a href="#bottom">Bottom</a><a name="top"></a>)
 </h1>
 
 
+<?php echo $this->element('sens/index/_index_pagination')?>
+
+<br>
 
 <table>
 
@@ -13,6 +16,16 @@
 	<?php echo $this->element('keywords/index_t_entries'); ?>
 		
 </table>
+
+<br>
+
+<?php echo $this->element('sens/index/_index_pagination')?>
+
+<br>
+(<a href="#top">Top</a><a name="bottom"></a>)
+
+<br>
+<br>
 
 <?php echo $this->Html->link("Add keyword",
 							array(

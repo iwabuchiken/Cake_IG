@@ -12,7 +12,7 @@ class SensController extends AppController {
 		**********************************/
 		$page_limit = 10;
 		
-		$opt_order = array('id' => 'asc');
+		$opt_order = array('id' => 'DESC');
 		
 		$this->paginate = array(
 				// 					'conditions' => array('Image.file_name LIKE' => "%$filter_TableName%"),
@@ -165,16 +165,16 @@ class SensController extends AppController {
 	
 		******************************/
 		if (!$id) {
-			throw new NotFoundException(__('Invalid keyword id'));
+			throw new NotFoundException(__('Invalid sen id'));
 			
 			return;
 			
 		}
 	
-		$keyword = $this->Keyword->findById($id);
+		$sen = $this->Sen->findById($id);
 	
-		if (!$keyword) {
-			throw new NotFoundException(__("Can't find the keyword. id = %d", $id));
+		if (!$sen) {
+			throw new NotFoundException(__("Can't find the sen. id = %d", $id));
 			
 			return;
 			
@@ -185,14 +185,14 @@ class SensController extends AppController {
 		delete
 	
 		******************************/
-		if ($this->Keyword->delete($id)) {
-			// 		if ($this->Keyword->save($this->request->data)) {
+		if ($this->Sen->delete($id)) {
+			// 		if ($this->Sen->save($this->request->data)) {
 				
-			$this->Session->setFlash(__("Keyword deleted => %s", $keyword['Keyword']['word']));
+			$this->Session->setFlash(__("Sen deleted => ".$sen['Sen']['text']));
 				
 			return $this->redirect(
 					array(
-							'controller' => 'keywords',
+							'controller' => 'sens',
 							'action' => 'index'
 							
 					));
@@ -200,14 +200,14 @@ class SensController extends AppController {
 		} else {
 				
 			$this->Session->setFlash(
-					__("Keyword can't be deleted => %s", $keyword['Keyword']['title']));
+					__("Sen can't be deleted => ".$sen['Sen']['text']));
 				
 			// 			$page_num = _get_Page_from_Id($id - 1);
 				
 			return $this->redirect(
 					array(
-							'controller' => 'keywords',
-							'action' => 'view',
+							'controller' => 'sens',
+							'action' => 'index',
 							$id
 					));
 				

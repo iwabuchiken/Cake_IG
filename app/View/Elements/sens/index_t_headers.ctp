@@ -15,4 +15,6 @@
 		<th class="table_header">Created at</th>
 		<th class="table_header">updated at</th>
 		
+		<th class="table_header">Del</th>
+		
 </tr>
