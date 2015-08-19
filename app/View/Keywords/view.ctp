@@ -32,6 +32,17 @@
     
   </tr>
   
+  <tr>
+    <td class="td_label_narrow">Memo</td>
+    
+    <td class="td_value_mideum">
+
+    	<?php echo $keyword['Keyword']['memo']?>
+    
+    </td>
+    
+  </tr>
+  
 </table>
 
 <p>

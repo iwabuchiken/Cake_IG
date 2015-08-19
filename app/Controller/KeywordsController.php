@@ -131,27 +131,36 @@ class KeywordsController extends AppController {
 	
 	public function edit($id = null) {
 		if (!$id) {
-			throw new NotFoundException(__('Invalid text'));
+			throw new NotFoundException(__('id => null'));
+			
+			return;
+			
 		}
 	
 		/****************************************
-			* Video
+			* Keyword
 		****************************************/
-		$video = $this->Video->findById($id);
-		if (!$video) {
-			throw new NotFoundException(__('Invalid video'));
+		$keyword = $this->Keyword->findById($id);
+		
+		if (!$keyword) {
+			
+			throw new NotFoundException(__("Keyword not found: id => ".$id));
+			
+			return;
+			
 		}
 	
 		if (count($this->params->data) != 0) {
 				
-			$this->Video->id = $id;
+			$this->Keyword->id = $id;
 				
-			$this->params->data['Video']['updated_at'] =
+			$this->params->data['Keyword']['updated_at'] =
 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
 				
-			if ($this->Video->save($this->request->data)) {
+			if ($this->Keyword->save($this->request->data)) {
 	
-				$this->Session->setFlash(__('Your video has been updated.'));
+				$this->Session->setFlash(__("Keyword has been updated: ".$id));
+				
 				return $this->redirect(
 						array(
 								'action' => 'view',
@@ -159,12 +168,17 @@ class KeywordsController extends AppController {
 	
 			}//if ($this->Text->save($this->request->data))
 				
-			$this->Session->setFlash(__('Unable to update your video.'));
+			$this->Session->setFlash(__("Unable to update your keyword: ".$id));
 				
-		}
+		} else {
+			
+			// no param => set keyword variable
+			$this->set("keyword", $keyword);
+			
+		}//if (count($this->params->data) != 0)
 	
 		if (!$this->request->data) {
-			$this->request->data = $video;;
+			$this->request->data = $keyword;;
 		}
 	
 	}//public function edit($id = null)
