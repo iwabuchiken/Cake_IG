@@ -31,15 +31,24 @@ class SensController extends AppController {
 
 	public function view($id = null) {
 		if (!$id) {
-			throw new NotFoundException(__('Invalid video'));
+			
+			throw new NotFoundException(__("id => !\$id"));
+			
+			return;
+			
 		}
-	
-		$keyword = $this->Keyword->findById($id);
-		if (!$keyword) {
-			throw new NotFoundException(__('Invalid video'));
+
+		$sen = $this->Sen->findById($id);
+// 		$sen = $this->Sen->findById($id);
+
+		if (!$sen) {
+			throw new NotFoundException(__("sen => null: id = ".$id));
+			
+			return ;
+			
 		}
 		
-		$this->set('keyword', $keyword);
+		$this->set('sen', $sen);
 		
 	}
 	
@@ -216,28 +225,39 @@ class SensController extends AppController {
 	}//public function delete($id)
 	
 	public function edit($id = null) {
+		
 		if (!$id) {
-			throw new NotFoundException(__('Invalid text'));
+			
+			throw new NotFoundException(__('id => null'));
+			
+			return;
+			
 		}
 	
 		/****************************************
-			* Video
+			* Sen
 		****************************************/
-		$video = $this->Video->findById($id);
-		if (!$video) {
-			throw new NotFoundException(__('Invalid video'));
+		$sen = $this->Sen->findById($id);
+		
+		if (!$sen) {
+			
+			throw new NotFoundException(__("sen => null: id = ".$id));
+			
+			return ;
+			
 		}
 	
 		if (count($this->params->data) != 0) {
 				
-			$this->Video->id = $id;
+			$this->Sen->id = $id;
 				
-			$this->params->data['Video']['updated_at'] =
+			$this->params->data['Sen']['updated_at'] =
 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
 				
-			if ($this->Video->save($this->request->data)) {
+			if ($this->Sen->save($this->request->data)) {
 	
-				$this->Session->setFlash(__('Your video has been updated.'));
+				$this->Session->setFlash(__("Sen has been updated: id = ".$id));
+				
 				return $this->redirect(
 						array(
 								'action' => 'view',
@@ -245,12 +265,17 @@ class SensController extends AppController {
 	
 			}//if ($this->Text->save($this->request->data))
 				
-			$this->Session->setFlash(__('Unable to update your video.'));
+			$this->Session->setFlash(__("Unable to update sen: id = ".$id));
 				
-		}
+		} else {
+			
+			// no param => set keyword variable
+			$this->set("sen", $sen);
+			
+		}//if (count($this->params->data) != 0)
 	
 		if (!$this->request->data) {
-			$this->request->data = $video;;
+			$this->request->data = $sen;;
 		}
 	
 	}//public function edit($id = null)
