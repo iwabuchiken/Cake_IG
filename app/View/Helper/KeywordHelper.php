@@ -1,6 +1,6 @@
 <?php
 
-class MainHelper extends AppHelper {
+class KeywordHelper extends AppHelper {
 // class MainHelper extends Helper {
 	
 	public function 
@@ -47,9 +47,12 @@ class MainHelper extends AppHelper {
 		/*******************************
 			get: instance
 		*******************************/
-		App::import("Keyword");
+// 		App::import("Keyword");
 		
-		$keyword = new Keyword();
+// 		$keyword = new Keyword();	//=> "Error: Class 'Keyword' not found"
+
+		$keyword = ClassRegistry::init('Keyword');
+// 		$model = ClassRegistry::init('Admin');
 		
 		$option = array(
 				'conditions' => array('Keyword.id' => $kw_id));

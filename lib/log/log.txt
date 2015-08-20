@@ -390,3 +390,7 @@
 [08/18/2015 10:43:35 : \app\Controller\KeywordsController.php : 267] get_keywords_mix => set 
 [08/18/2015 10:44:49 : \app\Controller\SensController.php : 96] add() => starts
 [08/18/2015 10:44:49 : \app\Controller\SensController.php : 125] saved => スマホは、煙に、どの程度、耐性を持つか？犬は、煙を、どの程度、嗅ぎ分けるか？
+[08/20/2015 13:35:50 : \app\Controller\KeywordsController.php : 192] get_keywords_mix: num = 3
+[08/20/2015 13:35:51 : \app\Controller\KeywordsController.php : 281] get_keywords_mix => set 
+[08/20/2015 13:36:18 : \app\Controller\SensController.php : 105] add() => starts
+[08/20/2015 13:36:18 : \app\Controller\SensController.php : 134] saved => 犬用のメニューのある、カフェ
