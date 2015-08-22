@@ -41,6 +41,35 @@ a.button {
     cursor:pointer;
 }
 
+a.button_2 {
+    /*color: aquamarine;*/
+    color: white;
+    /*color: #4e4e4e;*/
+    /*color: #6e6e6e;*/
+    font: bold 20px Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    padding: 7px 12px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 1px 0 #fff;
+    -webkit-transition: border-color .218s;
+    -moz-transition: border .218s;
+    -o-transition: border-color .218s;
+    transition: border-color .218s;
+    background: darkcyan;
+    /*background: #81BEF7;*/
+    
+    border: solid 1px #86B404;
+    /*border: solid 1px #dcdcdc;*/
+    border-radius: 10px;
+    /*border-radius: 2px;*/
+    -webkit-border-radius: 15px;
+    /*-webkit-border-radius: 2px;*/
+    -moz-border-radius: 2px;
+    margin-right: 20px;
+    cursor:pointer;
+}
+
 a.button_controller {
     color: #4e4e4e;
     /*color: #6e6e6e;*/
@@ -82,6 +111,16 @@ a#button_save_current_time {
 	
     color: #088A08;
     
+}
+
+a.link {
+	color: blue;
+	text-decoration: underline;
+	font-weight: bold;
+	
+	font-style:	italic;
+	
+	font-family:	serif;
 }
 
 /*
@@ -731,8 +770,39 @@ div.user_index {
 
 div.flash_done {
 	
-	color: blue;
+	color: white;
 	
+	background:	dodgerblue;
+	
+	border-radius: 25px;
+	
+	width:	25%;
+	
+	text-align:	center;
+	
+	padding:	10px;
+	margin:		10px;
+	
+	/*-webkit-transition: background-color .5s linear;
+	transition: background-color .5s linear;*/
+	
+	/*-webkit-animation-name: demo;
+    -webkit-animation-duration: 900ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;*/
+    
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 2s;
+	
+}
+
+/* REF http://www.w3schools.com/css/css3_animations.asp
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    from {background-color: yellow; color: white;}
+    to {background-color: dodgerblue; color: white;}
 }
 
 div.notification {

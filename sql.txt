@@ -7,6 +7,7 @@ sqlite3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\development.sqlite3
 
 pragma table_info(keywords);
 pragma table_info(sens);
+pragma table_info(admins);
 
 .exit
 
@@ -62,6 +63,20 @@ DROP TABLE sens;
 #REF	http://razorsql.com/features/sqlite_add_column.html
 ALTER TABLE histories ADD updates VARCHAR(200);
 
+DROP TABLE admins;
+
+CREATE TABLE admins (
+	id			INTEGER PRIMARY KEY     AUTOINCREMENT	NOT NULL,
+	created_at	VARCHAR(30),
+	updated_at	VARCHAR(30),
+	
+	name		VARCHAR(30),
+	val1		VARCHAR(100),
+	val2		VARCHAR(100)
+	
+);
+
+
 
 [mysql(lollipop)]======================================
 #REF http://sql-info.de/mysql/examples/CREATE-TABLE-examples.html
@@ -102,4 +117,17 @@ DROP TABLE sens;
 
 #REF http://www.tech-recipes.com/rx/378/add-a-column-to-an-existing-mysql-table/
 ALTER TABLE histories ADD updates VARCHAR(200);
+
+DROP TABLE admins;
+
+CREATE TABLE admins (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	created_at	VARCHAR(30),
+	updated_at	VARCHAR(30),
+	
+	name		VARCHAR(30),
+	val1		VARCHAR(100),
+	val2		VARCHAR(100)
+	
+);
 

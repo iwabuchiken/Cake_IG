@@ -10,7 +10,7 @@
 								'Keywords',
 								array('controller' => 'keywords', 
 										'action' => 'index'),
-								array('class' => "button"));
+								array('class' => "button_2"));
 			?>
 			
 		</td>
@@ -21,7 +21,18 @@
 								'Sentences',
 								array('controller' => 'sens', 
 										'action' => 'index'),
-								array('class' => "button"));
+								array('class' => "button_2"));
+			?>
+			
+		</td>
+
+		<td>
+		
+			<?php echo $this->Html->link(
+								'Admins',
+								array('controller' => 'admins', 
+										'action' => 'index'),
+								array('class' => "button_2"));
 			?>
 			
 		</td>
