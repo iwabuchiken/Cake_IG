@@ -35,6 +35,8 @@ CREATE TABLE keywords (
 	
     word		VARCHAR(30),
     
+    rubi		VARCHAR(50),
+    
     genre_id	INTEGER,
     
     type_id		INTEGER,
@@ -44,6 +46,18 @@ CREATE TABLE keywords (
 );
 
 DROP TABLE keywords;
+DROP TABLE keywords_old;
+
+#REF http://stackoverflow.com/questions/4253804/insert-new-column-into-table-in-sqlite answered Nov 23 '10 at 7:59
+ALTER TABLE keywords RENAME TO keywords_old;
+
+INSERT INTO keywords 
+		(id, created_at, updated_at, word, genre_id, type_id, memo) 
+	SELECT
+		id, created_at, updated_at, word, genre_id, type_id, memo
+	FROM keywords_old;
+
+SELECT * FROM keywords;
 
 CREATE TABLE sens (
 	id			INTEGER PRIMARY KEY     AUTOINCREMENT	NOT NULL,
@@ -89,6 +103,8 @@ CREATE TABLE keywords (
 	
     word		VARCHAR(30),
     
+    rubi		VARCHAR(50),
+    
     genre_id	INTEGER,
     
     type_id		INTEGER,
@@ -98,6 +114,16 @@ CREATE TABLE keywords (
 );
 
 DROP TABLE keywords;
+DROP TABLE keywords_old;
+
+RENAME TABLE keywords TO keywords_old;
+
+INSERT INTO keywords 
+		(id, created_at, updated_at, word, genre_id, type_id, memo) 
+	SELECT
+		id, created_at, updated_at, word, genre_id, type_id, memo
+	FROM keywords_old;
+
 
 CREATE TABLE sens (
 	id			INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

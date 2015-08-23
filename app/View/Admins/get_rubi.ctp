@@ -10,6 +10,11 @@
 <br>
 <br>
 
+<?php print_r($ResultSet); ?>
+
+<br>
+<br>
+
 <?php echo $this->Html->link("Add admin",
 							array(
 								'controller' => 'admins', 

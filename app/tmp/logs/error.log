@@ -1460,3 +1460,33 @@ Stack Trace:
 #3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(907): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-08-23 06:25:34 Error: [XmlException] XML cannot be read.
+Request URL: /Eclipse_Luna/Cake_IG/admins/get_rubi
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\Controller\AdminsController.php(211): Xml::build('http://jlp.yaho...')
+#1 [internal function]: AdminsController->get_rubi()
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(AdminsController), Array)
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest))
+#5 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-08-23 06:58:42 Error: Fatal Error (1): Call to undefined method DOMNodeList::count() in [C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\Controller\AdminsController.php, line 234]
+2015-08-23 06:58:42 Error: [FatalErrorException] Call to undefined method DOMNodeList::count()
+Request URL: /Eclipse_Luna/Cake_IG/admins/get_rubi
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\WORKS\\WS\\Ecl...', 234)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\WORKS\\WS\\Ecl...', 234, Array)
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(934): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\WORKS\\WS\\Ecl...', 234, Array)
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(907): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-23 07:09:05 Error: Fatal Error (4): syntax error, unexpected '$sen' (T_VARIABLE) in [C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\Controller\AdminsController.php, line 288]
+2015-08-23 07:09:05 Error: [FatalErrorException] syntax error, unexpected '$sen' (T_VARIABLE)
+Request URL: /Eclipse_Luna/Cake_IG/admins/get_rubi
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\WORKS\\WS\\Ecl...', 288)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\WORKS\\WS\\Ecl...', 288, Array)
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(934): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\WORKS\\WS\\Ecl...', 288, Array)
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(907): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

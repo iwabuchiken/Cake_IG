@@ -188,8 +188,181 @@ class AdminsController extends AppController {
 	public function get_rubi() {
 
 		/*******************************
+			build: keywords
+		*******************************/
+		$this->loadModel('Keyword');
+		
+		$option = array('order' => array('Keyword.id' => 'asc'));
+		
+		$keywords = $this->Keyword->find('all', $option);
+		
+// 		debug(count($keywords));
+		/*******************************
 			xml
 		*******************************/
+		$app_id = "dj0zaiZpPVdCMFl5WHA4NURGaSZzPWNvbnN1bWVyc2VjcmV0Jng9OTY-";
+
+		$sen = $keywords[0]['Keyword']['word'];
+		$url = "http://jlp.yahooapis.jp/FuriganaService/V1/furigana?appid=$app_id&grade=1&sentence=$sen";
+
+		//simpleXML
+		$xml = Xml::build($url);
+		
+		debug($xml);
+		
+		// dom
+		$html = file_get_contents($url);
+		$xmlDoc = new DOMDocument();
+		$xmlDoc->loadXML($html);
+		
+		$ResultSet = $xmlDoc->documentElement;
+// 		$xmlDom = $xmlDoc->documentElement;
+		
+		debug("ResultSet->nodeName => ". $ResultSet->nodeName);
+// 		debug($xmlDom->nodeName);
+		
+		debug($ResultSet->childNodes->length);
+		
+		debug($ResultSet->childNodes[0]->nodeName);
+		
+		debug(get_class($ResultSet->childNodes));
+		
+		$len = $ResultSet->childNodes->length;
+		
+		for ($i = 0; $i < $len; $i++) {
+			
+			debug("ResultSet->childNodes->item($i)->nodeName => "
+							.$ResultSet->childNodes->item($i)->nodeName);
+			
+		}
+		
+		debug("ResultSet->childNodes->item(0)->nodeValue => "
+		.$ResultSet->childNodes->item(0)->nodeValue);
+		
+		debug("ResultSet->childNodes->item(1)->nodeName => "
+				.$ResultSet->childNodes->item(1)->nodeName);
+		
+		debug("get_class(\$ResultSet->childNodes->item(0)) => " 
+				. get_class($ResultSet->childNodes->item(0)));	//=> DOMText
+		
+		debug("\$ResultSet->childNodes->item(0)->wholeText => " 
+				. "\"".$ResultSet->childNodes->item(0)->wholeText."\"");	//=> \R(?)
+		
+		debug("get_class(\$ResultSet->childNodes->item(1)) => " 
+				. get_class($ResultSet->childNodes->item(1)));	//=> DOMElement
+		
+		debug("\$ResultSet->childNodes->item(1)->nodeName => " 
+				. $ResultSet->childNodes->item(1)->nodeName);	//=> Result
+		
+// 		debug("ResultSet->childNodes->item(0)->nodeName => "
+// 				.$ResultSet->childNodes->item(0)->nodeName);
+		
+// 		debug("ResultSet->childNodes->item(1)->nodeName => "
+// 				.$ResultSet->childNodes->item(1)->nodeName);
+		
+		/*******************************
+			other method
+		*******************************/
+		$words = $xmlDoc->documentElement->getElementsByTagName("Word");
+// 		$words = $xmlDoc->getElementsByTagName("Word");
+		
+		$w = $words->item(0);	//=> Word
+		debug($w->nodeName);
+		
+		$furi = $w->getElementsByTagName("Furigana");	//=> NodeList
+		
+		$furi_elem = $furi->item(0);
+		
+		debug("furi => ".$furi_elem->nodeName);	//=> Furigana
+		debug($furi_elem->nodeValue);
+		
+// 		debug("sur => ".$sur->item(0));
+// 		debug("sur => ".$sur->nodeName);
+		
+		debug("words->length => ".$words->length);
+		
+		
+		$w_children = $w->childNodes;
+		
+		$len_w_children = $w_children->length;	//=> 7
+		
+// 		for ($i = 0; $i < $len_w_children; $i++) {	//=> empty object
+			
+// 			debug($w_children->item($i));
+			
+// 		}
+		
+// 		debug("\$w_children->length => ".$len_w_children);
+// 		debug("\$w_children->length => ".$w_children->length);
+// 		debug($words->item(0)->nodeName);
+		
+// 		debug($words->item(0)->childNodes->length);
+		
+		
+		$this->set("ResultSet", $ResultSet);
+		
+// 		foreach ($keywords as $k) {
+		
+// // 			debug($k['Keyword']['word']);
+// 			$sen = $k['Keyword']['word'];
+// 			$url = "http://jlp.yahooapis.jp/FuriganaService/V1/furigana?appid=$app_id&grade=1&sentence=$sen";
+			
+// 			$xml = Xml::build($url);
+			
+// 			$words = $xml->Result->WordList->Word;
+			
+// 			debug("kw => ".$sen);
+// 			debug(count($words));
+			
+// 			debug($xml);
+			
+// 			/*******************************
+// 				dom
+// 			*******************************/
+// 			//REF C:\WORKS\WS\Eclipse_Luna\VM_Cake\app\Controller\VideosController.php
+// 			$html = file_get_contents($url);
+// 			$xmlDoc = new DOMDocument();
+// 			$xmlDoc->loadXML($html);
+				
+// 			$xmlDom = $xmlDoc->documentElement;
+			
+// 			//REF C:\WORKS\WS\Eclipse_Luna\VM_Cake\app\View\Elements\positions\view\view_tests.ctp
+// 			debug("nodeName => ".$xmlDom->nodeName);
+// // 			debug("childNodes->length => ".$xmlDom->childNodes->length);	//=> w
+// // 			debug("childNodes => ".$xmlDom->childNodes->count());	//=> Call to undefined method
+// // 			debug("childNodes => ".$xmlDom->childNodes);
+// // 			debug("result => ".$xmlDom->result);	//=> Undefined property: DOMElement::$result
+// // 			debug($xmlDom->nodeName);
+
+// // 			debug($xml);
+			
+// // 			debug($words->surface);
+			
+// // 			debug($words[0]->children()->furigana);	//=> empty object
+// // 			debug($words[0]->children());	//=>
+// 						// 			object(SimpleXMLElement) {
+// 						// 				Surface => '犬'
+// 						// 						Furigana => 'いぬ'
+// 						// 								Roman => 'inu'
+// 						// 			}
+// // 			debug($words[0]->furigana);	//=> empty object
+// // 			debug($words[0]->furigana->nodeValue);	//=> null
+// // 			debug($words[0]->furigana->text);	//=> null
+			
+// // 			debug($words->children());
+// // 			debug($words[0]->surface);
+// // 			debug($words->furigana->textContent);	//=> null
+// // 			debug($words[0]->furigana->textContent);	//=> null
+// // 			debug($words[0]->Furigana);
+// // 			debug($words[0]->furigana);
+// // 			debug((empty($words[0]->furigana) ? $words[0]->furigana : $words[0]->surface));
+// // 			debug((isset($words[0]->furigana) ? $words[0]->furigana : $words[0]->surface));
+			
+// 		}//foreach ($keywords as $k)
+		
+		
+		
+		
 		$sen = "犬用のメニューのある、カフェ";
 // 		$sen = "記事";
 		$app_id = "dj0zaiZpPVdCMFl5WHA4NURGaSZzPWNvbnN1bWVyc2VjcmV0Jng9OTY-";
@@ -220,11 +393,11 @@ class AdminsController extends AppController {
 		
 // 		debug($words->count());
 		
-		foreach ($words as $w) {
+// 		foreach ($words as $w) {
 			
-			debug($w);
-// 			debug("word => ".$w);
-		}
+// 			debug($w);
+// // 			debug("word => ".$w);
+// 		}
 		
 		
 // 		debug($children->count());
