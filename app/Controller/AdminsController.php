@@ -218,41 +218,41 @@ class AdminsController extends AppController {
 		$ResultSet = $xmlDoc->documentElement;
 // 		$xmlDom = $xmlDoc->documentElement;
 		
-		debug("ResultSet->nodeName => ". $ResultSet->nodeName);
-// 		debug($xmlDom->nodeName);
+// 		debug("ResultSet->nodeName => ". $ResultSet->nodeName);
+// // 		debug($xmlDom->nodeName);
 		
-		debug($ResultSet->childNodes->length);
+// 		debug($ResultSet->childNodes->length);
 		
-		debug($ResultSet->childNodes[0]->nodeName);
+// 		debug($ResultSet->childNodes[0]->nodeName);
 		
-		debug(get_class($ResultSet->childNodes));
+// 		debug(get_class($ResultSet->childNodes));
 		
 		$len = $ResultSet->childNodes->length;
 		
-		for ($i = 0; $i < $len; $i++) {
+// 		for ($i = 0; $i < $len; $i++) {
 			
-			debug("ResultSet->childNodes->item($i)->nodeName => "
-							.$ResultSet->childNodes->item($i)->nodeName);
+// 			debug("ResultSet->childNodes->item($i)->nodeName => "
+// 							.$ResultSet->childNodes->item($i)->nodeName);
 			
-		}
+// 		}
 		
-		debug("ResultSet->childNodes->item(0)->nodeValue => "
-		.$ResultSet->childNodes->item(0)->nodeValue);
+// 		debug("ResultSet->childNodes->item(0)->nodeValue => "
+// 		.$ResultSet->childNodes->item(0)->nodeValue);
 		
-		debug("ResultSet->childNodes->item(1)->nodeName => "
-				.$ResultSet->childNodes->item(1)->nodeName);
+// 		debug("ResultSet->childNodes->item(1)->nodeName => "
+// 				.$ResultSet->childNodes->item(1)->nodeName);
 		
-		debug("get_class(\$ResultSet->childNodes->item(0)) => " 
-				. get_class($ResultSet->childNodes->item(0)));	//=> DOMText
+// 		debug("get_class(\$ResultSet->childNodes->item(0)) => " 
+// 				. get_class($ResultSet->childNodes->item(0)));	//=> DOMText
 		
-		debug("\$ResultSet->childNodes->item(0)->wholeText => " 
-				. "\"".$ResultSet->childNodes->item(0)->wholeText."\"");	//=> \R(?)
+// 		debug("\$ResultSet->childNodes->item(0)->wholeText => " 
+// 				. "\"".$ResultSet->childNodes->item(0)->wholeText."\"");	//=> \R(?)
 		
-		debug("get_class(\$ResultSet->childNodes->item(1)) => " 
-				. get_class($ResultSet->childNodes->item(1)));	//=> DOMElement
+// 		debug("get_class(\$ResultSet->childNodes->item(1)) => " 
+// 				. get_class($ResultSet->childNodes->item(1)));	//=> DOMElement
 		
-		debug("\$ResultSet->childNodes->item(1)->nodeName => " 
-				. $ResultSet->childNodes->item(1)->nodeName);	//=> Result
+// 		debug("\$ResultSet->childNodes->item(1)->nodeName => " 
+// 				. $ResultSet->childNodes->item(1)->nodeName);	//=> Result
 		
 // 		debug("ResultSet->childNodes->item(0)->nodeName => "
 // 				.$ResultSet->childNodes->item(0)->nodeName);
@@ -274,7 +274,7 @@ class AdminsController extends AppController {
 		$furi_elem = $furi->item(0);
 		
 		debug("furi => ".$furi_elem->nodeName);	//=> Furigana
-		debug($furi_elem->nodeValue);
+		debug($furi_elem->nodeValue);	//=> いぬ
 		
 // 		debug("sur => ".$sur->item(0));
 // 		debug("sur => ".$sur->nodeName);
@@ -301,66 +301,107 @@ class AdminsController extends AppController {
 		
 		$this->set("ResultSet", $ResultSet);
 		
+		foreach ($keywords as $index => $k) {
 // 		foreach ($keywords as $k) {
+	// 			object(SimpleXMLElement) {
+	// 				Result => object(SimpleXMLElement) {
+	// 					WordList => object(SimpleXMLElement) {
+	// 						Word => object(SimpleXMLElement) {
+	// 							Surface => '犬'
+	// 									Furigana => 'いぬ'
+	// 											Roman => 'inu'
+	// 						}
+	// 					}
+	// 				}
+	// 			}
+	
+			$sen = $k['Keyword']['word'];
+			$url = "http://jlp.yahooapis.jp/FuriganaService/V1/furigana?appid=$app_id&grade=1&sentence=$sen";
+			
+			$rubi = $k['Keyword']['rubi'];
+			
+			if ($rubi != null) {
+			
+				$msg = "sen => $sen"."/"."rubi -> ".$k['Keyword']['rubi'];
 		
-// // 			debug($k['Keyword']['word']);
-// 			$sen = $k['Keyword']['word'];
-// 			$url = "http://jlp.yahooapis.jp/FuriganaService/V1/furigana?appid=$app_id&grade=1&sentence=$sen";
+			} else {
 			
-// 			$xml = Xml::build($url);
-			
-// 			$words = $xml->Result->WordList->Word;
-			
-// 			debug("kw => ".$sen);
-// 			debug(count($words));
-			
-// 			debug($xml);
-			
-// 			/*******************************
-// 				dom
-// 			*******************************/
-// 			//REF C:\WORKS\WS\Eclipse_Luna\VM_Cake\app\Controller\VideosController.php
-// 			$html = file_get_contents($url);
-// 			$xmlDoc = new DOMDocument();
-// 			$xmlDoc->loadXML($html);
+				$msg = "sen => $sen"."/"."rubi -> null";
 				
-// 			$xmlDom = $xmlDoc->documentElement;
+			}//if ($rubi != null)
 			
-// 			//REF C:\WORKS\WS\Eclipse_Luna\VM_Cake\app\View\Elements\positions\view\view_tests.ctp
-// 			debug("nodeName => ".$xmlDom->nodeName);
-// // 			debug("childNodes->length => ".$xmlDom->childNodes->length);	//=> w
-// // 			debug("childNodes => ".$xmlDom->childNodes->count());	//=> Call to undefined method
-// // 			debug("childNodes => ".$xmlDom->childNodes);
-// // 			debug("result => ".$xmlDom->result);	//=> Undefined property: DOMElement::$result
-// // 			debug($xmlDom->nodeName);
+			debug($msg);
+			
+			/*******************************
+				dom
+			*******************************/
+			//REF C:\WORKS\WS\Eclipse_Luna\VM_Cake\app\Controller\VideosController.php
+			$html = file_get_contents($url);
+			$xmlDoc = new DOMDocument();
+			$xmlDoc->loadXML($html);
+				
+			$words = $xmlDoc->documentElement->getElementsByTagName("Word");
+			// 		$words = $xmlDoc->getElementsByTagName("Word");
+			
+			$w = $words->item(0);	//=> Word
 
-// // 			debug($xml);
+			$furi = $w->getElementsByTagName("Furigana");	//=> NodeList
+			$sur = $w->getElementsByTagName("Surface");	//=> NodeList
 			
-// // 			debug($words->surface);
+			$furi_elem = $furi->item(0);
+			$sur_elem = $sur->item(0);
 			
-// // 			debug($words[0]->children()->furigana);	//=> empty object
-// // 			debug($words[0]->children());	//=>
-// 						// 			object(SimpleXMLElement) {
-// 						// 				Surface => '犬'
-// 						// 						Furigana => 'いぬ'
-// 						// 								Roman => 'inu'
-// 						// 			}
-// // 			debug($words[0]->furigana);	//=> empty object
-// // 			debug($words[0]->furigana->nodeValue);	//=> null
-// // 			debug($words[0]->furigana->text);	//=> null
+// 			debug("furi => ".$furi_elem->nodeName);	//=> Furigana
+// 			debug($furi_elem->nodeValue);	//=> いぬ
+
+			if ($furi_elem != null) {
 			
-// // 			debug($words->children());
-// // 			debug($words[0]->surface);
-// // 			debug($words->furigana->textContent);	//=> null
-// // 			debug($words[0]->furigana->textContent);	//=> null
-// // 			debug($words[0]->Furigana);
-// // 			debug($words[0]->furigana);
-// // 			debug((empty($words[0]->furigana) ? $words[0]->furigana : $words[0]->surface));
-// // 			debug((isset($words[0]->furigana) ? $words[0]->furigana : $words[0]->surface));
+				$msg = $sur_elem->nodeValue."/"
+						.$furi_elem->nodeValue
+						."/".mb_convert_kana($sur_elem->nodeValue, "c");
+				
+				$keywords[$index]['Keyword']['rubi'] = $furi_elem->nodeValue;
+// 				$k['Keyword']['rubi'] = $furi_elem->nodeValue;
 			
-// 		}//foreach ($keywords as $k)
+			} else {
+			
+				$msg = mb_convert_kana($sur_elem->nodeValue, "c")."/"."null";
+// 				$msg = $sur_elem->nodeValue."/"."null";
+				
+				$keywords[$index]['Keyword']['rubi'] = 
+							mb_convert_kana($sur_elem->nodeValue, "c");
+				
+			}//if ($furi_elem != null)
+			
+			
+			
+			debug($msg);	//=> '窓ガラス/まどがらす/窓がらす'
+// 			debug($sur_elem->nodeValue."/".$furi_elem->nodeValue);	//=>
+					
+// 			debug(mb_convert_kana("カーテン", "c"));
+			
+		}//foreach ($keywords as $k)
 		
-		
+		/*******************************
+			report
+		*******************************/
+		foreach ($keywords as $k) {
+			
+			$rubi = $k['Keyword']['rubi'];
+			
+			if ($rubi != null) {
+					
+				$msg = "rubi is now -> ".$k['Keyword']['rubi'];
+			
+			} else {
+					
+				$msg = "rubi is now -> null";
+			
+			}//if ($rubi != null)
+				
+			debug($msg);
+				
+		}
 		
 		
 		$sen = "犬用のメニューのある、カフェ";
