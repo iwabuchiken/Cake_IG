@@ -2049,6 +2049,128 @@
 			return $texts[0];
 			
 		}//get_Article_Line($url)
+
+		public static function get_rubi() {
+
+			/*******************************
+				biuld: keywords list
+			*******************************/
+			$model = ClassRegistry::init('Keyword');
+			
+			$option = array('order' => array('Keyword.id' => 'asc'));
+			
+			$keywords = $model->find('all', $option);
+
+			/*******************************
+				set rubi
+			*******************************/
+			$app_id = "dj0zaiZpPVdCMFl5WHA4NURGaSZzPWNvbnN1bWVyc2VjcmV0Jng9OTY-";
+			
+			foreach ($keywords as $index => $k) {
+		
+				$rubi = $k['Keyword']['rubi'];
+				
+				/*******************************
+					dom
+				*******************************/
+				$sen = $k['Keyword']['word'];
+				$url = "http://jlp.yahooapis.jp/FuriganaService/V1/furigana?"
+						."appid=$app_id"
+						."&grade=1"
+						."&sentence=$sen";
+				
+				//REF C:\WORKS\WS\Eclipse_Luna\VM_Cake\app\Controller\VideosController.php
+				$html = file_get_contents($url);
+				$xmlDoc = new DOMDocument();
+				$xmlDoc->loadXML($html);
+					
+				$words = $xmlDoc->documentElement->getElementsByTagName("Word");
+				
+				$w = $words->item(0);	//=> Word
+	
+				$furi = $w->getElementsByTagName("Furigana");	//=> NodeList
+				$sur = $w->getElementsByTagName("Surface");	//=> NodeList
+				
+				$furi_elem = $furi->item(0);
+				$sur_elem = $sur->item(0);
+				
+				if ($furi_elem != null) {
+				
+					$msg = $sur_elem->nodeValue."/"
+							.$furi_elem->nodeValue
+							."/".mb_convert_kana($sur_elem->nodeValue, "c");
+					
+					$keywords[$index]['Keyword']['rubi'] = $furi_elem->nodeValue;
+				
+				} else {
+				
+					$msg = mb_convert_kana($sur_elem->nodeValue, "c")."/"."null";
+					
+					$keywords[$index]['Keyword']['rubi'] = 
+								mb_convert_kana($sur_elem->nodeValue, "c");
+					
+				}//if ($furi_elem != null)
+				
+			}//foreach ($keywords as $k)
+
+			debug("rubi => obtained");
+			
+			/*******************************
+				return
+			*******************************/
+			return $keywords;
+			
+		}
+
+		public static function 
+		update_Keyword($keyword) {
+			
+// 			if (!$id) {
+// 				throw new NotFoundException(__('id => null'));
+					
+// 				return;
+					
+// 			}
+		
+			/****************************************
+			 * Keyword
+			****************************************/
+// 			$keyword = $this->Keyword->findById($id);
+		
+// 			if (!$keyword) {
+					
+// 				throw new NotFoundException(__("Keyword not found: id => ".$id));
+					
+// 				return;
+					
+// 			}
+		
+// 			if (count($this->params->data) != 0) {
+		
+// 				$this->Keyword->id = $id;
+		
+// 				$this->params->data['Keyword']['updated_at'] =
+				$keyword['Keyword']['updated_at'] =
+					Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
+
+// 				debug($keyword);
+				
+				$model = ClassRegistry::init('Keyword');
+				
+				if ($model->save($keyword)) {
+// 				if ($this->Keyword->save($keyword)) {
+// 				if ($this->Keyword->save($this->request->data)) {
+
+					return true;
+		
+				} else {//if ($this->Text->save($this->request->data))
+					
+					return false;
+					
+				}//if ($this->Text->save($this->request->data))
+		
+		}//public function edit($id = null)
+		
 		
 	}//class Utils
 	

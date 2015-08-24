@@ -8,6 +8,8 @@
 		
 		<th class="table_header">Word</th>
 		
+		<th class="table_header">Rubi</th>
+		
 		<th class="table_header">Genre</th>
 		<th class="table_header">Type</th>
 		<th class="table_header">Memo</th>

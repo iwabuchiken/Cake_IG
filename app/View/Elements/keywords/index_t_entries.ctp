@@ -17,6 +17,8 @@
 							); ?>
 		</td>
 		
+		<td class="td_news_time"><?php echo $keyword['Keyword']['rubi']; ?></td>
+		
 		<td class="td_news_time"><?php echo $keyword['Keyword']['genre_id']; ?></td>
 		<td class="td_news_time"><?php echo $keyword['Keyword']['type_id']; ?></td>
 		<td class="td_news_time"><?php echo $keyword['Keyword']['memo']; ?></td>

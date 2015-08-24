@@ -24,6 +24,7 @@ sqlite3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\development.sqlite3 "reinde
 copy dev.db C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\development.sqlite3
 
 SELECT * FROM keywords;
+SELECT id,rubi FROM keywords;
 SELECT * FROM sens;
 
 
