@@ -14,7 +14,20 @@ class KeywordsController extends AppController {
 		**********************************/
 		$page_limit = 10;
 		
-		$opt_order = array('id' => 'asc');
+		$opt_order = array("Keyword.id" => "desc");		//=>
+// 		$opt_order = array("Keyword.rubi" => "asc");		//=>
+// 		$opt_order = array("Keyword.rubi" => "desc");		//=>
+// 		$opt_order = "Keyword.rubi desc";		//=> n/w
+	
+// 		$opt_order = "Keyword.id desc";		//=> n/w
+// 		$opt_order = array('Keyword.id' => 'desc');
+// 		$opt_order = array('Keyword.id desc');	//=> n/w
+// 		$opt_order = array('id desc');		//=> n/w
+// 		$opt_order = array('id' => 'dec');
+// 		$opt_order = array('id' => 'DESC');
+// 		$opt_order = array('id' => 'asc');
+		
+// 		debug($opt_order);
 		
 		$this->paginate = array(
 				// 					'conditions' => array('Image.file_name LIKE' => "%$filter_TableName%"),
@@ -56,6 +69,12 @@ class KeywordsController extends AppController {
 			$this->request->data['Keyword']['updated_at'] =
 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
 			
+			// ruby
+// 			$this->Keyword->rubi = 
+			$this->request->data['Keyword']['rubi'] =
+						Utils::conv_Word_2_Rubi($this->request->data['Keyword']['word']);
+			
+			// save
 			if ($this->Keyword->save($this->request->data)) {
 				
 				$this->Session->setFlash(
