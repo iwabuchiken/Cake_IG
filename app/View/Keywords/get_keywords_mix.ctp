@@ -117,7 +117,7 @@
 
 <br>
 
-<a class="button" onclick="show_composition_area()">Compose</a>
+<a class="button" onclick="show_composition_area()" id="btn_compose">Compose</a>
 
 <div id="kw_data" style="display: none">
 

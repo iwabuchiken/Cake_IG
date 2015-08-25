@@ -240,6 +240,10 @@ function show_composition_area() {
 	
 	div.css("display", "inline");	
 	
+	var div_btn = $('a#btn_compose');
+	
+	div_btn.css("display", "none");
+	
 }//show_composition_area
 
 function submit_composition() {
@@ -261,53 +265,25 @@ function submit_composition() {
 	
 	var tmp = "";
 	
-//	tmp = tmp +  id_str_1.substring(0,1);
-//	tmp = tmp +  "/";
-//	
-//	tmp = tmp +  id_str_1.substring(1,2);
-//	tmp = tmp +  "/";
-//	tmp += id_str_1(0,1);
-//	tmp += "/";
-//	
-//	tmp += id_str_1(1,2);
-//	tmp += "/";
-	
 	for (var i = 0; i < len_1 - 1; i++) {
 		
 		tmp += "(" + i + ")";
 		
 		tmp += id_str_1.substring(i, i + 1);
-//		tmp += id_str_1(i, i + 1);
-		
-//		tmp += "/";
 		
 	}
-	
-//	alert("id_1 => " + tmp + "[" + len_1 + "]");
-//	alert("id_1 => " + $.trim(id_str_1) + "[" + len_1 + "]");
-//	alert("id_1 => " + $.trim(tmp) + "[" + len_1 + "]");
-//	alert("id_1 => " + id_str_1 + "(" + id_str_1.substring(0,1) + ")");
-//	alert("id_1 => " + id_str_1 + "(" + id_str_1.length + ")");
-//	alert("id_1 => " + id_1.text() + "(" + id_1.text().length + ")");
-	
-//	var ids = id_1.text + " "
-//				+ id_2.text + " " 
-//				+ id_3.text + " "; 
-//	var ids = id_1.text() + " "
-//	+ id_2.text() + " " 
-//	+ id_3.text() + " "; 
-//	var ids = id_1.text().substring(4,5) + " "
-//	+ id_2.text().substring(4,5) + " " 
-//	+ id_3.text().substring(4,5) + " "; 
 	
 	//REF trim http://stackoverflow.com/questions/4637942/how-can-i-truncate-a-string-in-jquery answered Jan 9 '11 at 6:19
 	var ids = $.trim(id_1.text()) + " "
 	+ $.trim(id_2.text()) + " " 
 	+ $.trim(id_3.text()); 
 	
-//	alert("ids => " + ids + "[" + ids.length + "]");
-	
 	var sen = $('textarea#Compose');
+	
+	/***************************
+		memo
+	 ***************************/
+	var memo = $('textarea#Memo');
 	
 	/***************************
 		change color
@@ -331,9 +307,6 @@ function submit_composition() {
 	
 	}
 	
-//	alert(url);
-	
-//	alert("ajax starting... => " + url);
 	/***************************
 		ajax
 	 ***************************/
@@ -344,25 +317,21 @@ function submit_composition() {
 	    //REF http://stackoverflow.com/questions/1916309/pass-multiple-parameters-to-jquery-ajax-call answered Dec 16 '09 at 17:37
 	    data: {
 	    		"data[Sen][text]": sen.val(),
-	    		"data[Sen][kws]":	ids
+	    		"data[Sen][kws]":	ids,
+	    		"data[Sen][memo]":	memo.val()
 	    		},
-//	    data: {"data[Sen][kws]": sen.val()},
 	    
 	    timeout: 10000
 	    
 	}).done(function(data, status, xhr) {
 	
-//		alert(data);
 		_submit_composition__Done(data);
-		
-//		_get_kw_mix__Done(data);
 		
 	}).fail(function(xhr, status, error) {
 		
 		alert(xhr.status);
 		
 	});
-	
 	
 }//submit_composition
 

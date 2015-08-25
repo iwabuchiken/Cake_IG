@@ -110,6 +110,23 @@ a#button_stop {
     
 }
 
+a#submit_composition {
+	
+    margin: 20px;
+    
+}
+
+a#btn_compose {
+	
+    
+}
+
+a#btn_keyword_mix {
+	
+    /*float:	right;*/
+    
+}
+
 a#button_save_current_time {
 	
     color: #088A08;
@@ -637,6 +654,27 @@ textarea#jquery_textarea {
 	
 	height:	170px;
 	margin-top:	20px
+}
+
+textarea#Memo {
+	
+	background-color:	DarkSeaGreen;
+	
+	float:	left;
+	
+	/*height:	170px;
+	margin-top:	20px*/
+}
+
+textarea#Compose {
+	
+	background-color:	bisque;
+	
+	
+	/*float:	left;*/
+	
+	/*height:	170px;
+	margin-top:	20px*/
 }
 
 textarea.add_name {
