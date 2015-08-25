@@ -275,10 +275,24 @@ function submit_composition() {
 	
 	//REF trim http://stackoverflow.com/questions/4637942/how-can-i-truncate-a-string-in-jquery answered Jan 9 '11 at 6:19
 	var ids = $.trim(id_1.text()) + " "
-	+ $.trim(id_2.text()) + " " 
-	+ $.trim(id_3.text()); 
+				+ $.trim(id_2.text()) + " " 
+				+ $.trim(id_3.text()); 
 	
+	/***************************
+		sentence
+	 ***************************/
 	var sen = $('textarea#Compose');
+	
+	// validate
+	if (sen.val() == "") {
+		
+		sen.css("background", "lightcoral");
+		
+		alert("no composition");
+		
+		return;
+		
+	}
 	
 	/***************************
 		memo
@@ -342,7 +356,8 @@ function _submit_composition__Done(data) {
 	 ***************************/
 	var sen = $('textarea#Compose');
 	
-	if (data == "saved") {
+	if ($.trim(data) == "saved") {
+//		if (data == "saved") {
 		
 //		alert("saved");
 		
@@ -350,7 +365,7 @@ function _submit_composition__Done(data) {
 		
 	} else {
 
-		alert("message is => " + data);
+		alert("message is => " + data + "(len=" + data.length + ")");
 		
 		sen.css("background", "burlywood");
 		
