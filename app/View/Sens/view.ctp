@@ -69,9 +69,31 @@
   
 </table>
 
-<p>
+<br>
+<!-- <p> -->
 	<?php echo $this->Html->link(
-					'Delete sen',
+					'Edit Sen',
+					array(
+							'controller' => 'sens', 
+							'action' => 'edit', 
+							$sen['Sen']['id']
+					),
+					array(
+							// 							'style'	=> 'color: blue'
+							'class'		=> 'button'
+					)
+						
+// 					//REF http://stackoverflow.com/questions/22519966/cakephp-delete-confirmation answered Mar 19 at 23:18
+// 					__("Delete? => %s", $sen['Sen']['text'])
+	
+				);
+	?>
+
+<!-- </p> -->
+
+<!-- <p> -->
+	<?php echo $this->Html->link(
+					'Delete Sen',
 					array(
 							'controller' => 'sens', 
 							'action' => 'delete', 
@@ -79,7 +101,7 @@
 					),
 					array(
 							// 							'style'	=> 'color: blue'
-// 							'class'		=> 'link_word_alert'
+							'class'		=> 'button'
 					),
 						
 					//REF http://stackoverflow.com/questions/22519966/cakephp-delete-confirmation answered Mar 19 at 23:18
@@ -88,4 +110,4 @@
 				);
 	?>
 
-</p>
+<!-- </p> -->

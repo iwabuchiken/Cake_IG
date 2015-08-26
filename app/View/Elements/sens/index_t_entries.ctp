@@ -95,6 +95,28 @@
 						'Go',
 						array(
 								'controller' => 'sens', 
+								'action' => 'edit', 
+								$sen['Sen']['id']
+						),
+						array(
+								// 							'style'	=> 'color: blue'
+	// 							'class'		=> 'link_word_alert'
+						)
+							
+// 						//REF http://stackoverflow.com/questions/22519966/cakephp-delete-confirmation answered Mar 19 at 23:18
+// 						__("Delete? => %s", $sen['Sen']['text'])
+		
+					);
+				?>
+		</td>
+		
+		<td class="td_news_time">
+				<?php //echo $sen['Sen']['updated_at']; ?>
+				
+				<?php echo $this->Html->link(
+						'Go',
+						array(
+								'controller' => 'sens', 
 								'action' => 'delete', 
 								$sen['Sen']['id']
 						),
