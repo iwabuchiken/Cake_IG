@@ -2188,6 +2188,8 @@
 					."&grade=1"
 						."&sentence=$sen";
 			
+// 			debug($url);
+			
 			//REF C:\WORKS\WS\Eclipse_Luna\VM_Cake\app\Controller\VideosController.php
 			$html = file_get_contents($url);
 			$xmlDoc = new DOMDocument();
@@ -2195,11 +2197,32 @@
 				
 			$words = $xmlDoc->documentElement->getElementsByTagName("Word");
 
+// 			debug($words->length);	//=> 2 ("不破医院")
+// 			debug($words);	//=> DOMNodeList
+			
 			$w = $words->item(0);	//=> Word
 
+// 			$w2 = $words->item(1);
+			
+// 			debug($w2);		//=> DOMElement
+			
+// 			$furi2 = $w2->getElementsByTagName("Furigana");
+			
+// 			debug($furi2);	//=> DOMNodeList
+			
+// 			debug($furi2->item(0));
+// 			debug($furi2->item(0)->nodeValue);
+			
+// 			debug($w);
+			
 			$furi = $w->getElementsByTagName("Furigana");	//=> NodeList
 			$sur = $w->getElementsByTagName("Surface");	//=> NodeList
 
+// 			debug("furi => ".$furi->item(0)->length);	//=> Undefined property
+// 			debug("furi => ".$furi->item(1));
+// 			debug("furi => ".$furi->item->length);
+// 			debug("furi => ".count($furi));
+			
 			$furi_elem = $furi->item(0);
 			$sur_elem = $sur->item(0);
 				
@@ -2219,6 +2242,112 @@
 			}//if ($furi_elem != null)
 					
 		}
+	
+		public static function conv_Word_2_Rubi_V2($word) {
+			
+			/*******************************
+			 set rubi
+			*******************************/
+			$app_id = "dj0zaiZpPVdCMFl5WHA4NURGaSZzPWNvbnN1bWVyc2VjcmV0Jng9OTY-";
+			
+			/*******************************
+			 dom
+			*******************************/
+			$sen = $word;
+			$url = "http://jlp.yahooapis.jp/FuriganaService/V1/furigana?"
+					."appid=$app_id"
+					."&grade=1"
+						."&sentence=$sen";
+			
+			//REF C:\WORKS\WS\Eclipse_Luna\VM_Cake\app\Controller\VideosController.php
+			$html = file_get_contents($url);
+			$xmlDoc = new DOMDocument();
+			$xmlDoc->loadXML($html);
+				
+			$words = $xmlDoc->documentElement->getElementsByTagName("Word");
+
+			$len_words = $words->length;
+
+			$result_str = "";
+			
+			for ($i = 0; $i < $len_words; $i++) {
+				
+				$w = $words->item($i);
+
+				$furi = $w->getElementsByTagName("Furigana");	//=> NodeList
+				$sur = $w->getElementsByTagName("Surface");	//=> NodeList
+
+				$furi_elem = $furi->item(0);
+				$sur_elem = $sur->item(0);
+				
+				/*******************************
+					build string
+				*******************************/
+				if ($furi_elem != null) {
+						
+					$result_str .= $furi_elem->nodeValue;
+						
+				} else {
+				
+					$result_str .= mb_convert_kana($sur_elem->nodeValue, "c");
+				
+					// 				$msg = mb_convert_kana($sur_elem->nodeValue, "c")."/"."null";
+						
+					// 				$keywords[$index]['Keyword']['rubi'] =
+					// 				mb_convert_kana($sur_elem->nodeValue, "c");
+						
+				}//if ($furi_elem != null)
+				
+			}
+			
+			return $result_str;
+			
+// // 			debug($words->length);	//=> 2 ("不破医院")
+// // 			debug($words);	//=> DOMNodeList
+			
+// 			$w = $words->item(0);	//=> Word
+
+// // 			$w2 = $words->item(1);
+			
+// // 			debug($w2);		//=> DOMElement
+			
+// // 			$furi2 = $w2->getElementsByTagName("Furigana");
+			
+// // 			debug($furi2);	//=> DOMNodeList
+			
+// // 			debug($furi2->item(0));
+// // 			debug($furi2->item(0)->nodeValue);
+			
+// // 			debug($w);
+			
+// 			$furi = $w->getElementsByTagName("Furigana");	//=> NodeList
+// 			$sur = $w->getElementsByTagName("Surface");	//=> NodeList
+
+// // 			debug("furi => ".$furi->item(0)->length);	//=> Undefined property
+// // 			debug("furi => ".$furi->item(1));
+// // 			debug("furi => ".$furi->item->length);
+// // 			debug("furi => ".count($furi));
+			
+// 			$furi_elem = $furi->item(0);
+// 			$sur_elem = $sur->item(0);
+				
+// 			if ($furi_elem != null) {
+			
+// 				return $furi_elem->nodeValue;
+			
+// 			} else {
+
+// 				return mb_convert_kana($sur_elem->nodeValue, "c");
+				
+// // 				$msg = mb_convert_kana($sur_elem->nodeValue, "c")."/"."null";
+					
+// // 				$keywords[$index]['Keyword']['rubi'] =
+// // 				mb_convert_kana($sur_elem->nodeValue, "c");
+					
+// 			}//if ($furi_elem != null)
+					
+		}
+	
 	}//class Utils
 	
 	

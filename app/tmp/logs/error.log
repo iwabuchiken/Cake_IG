@@ -1530,3 +1530,13 @@ Stack Trace:
 #3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(907): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-08-29 09:47:47 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 23076814 bytes) in [C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Utility\Debugger.php, line 562]
+2015-08-29 09:47:47 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 23076814 bytes)
+Request URL: /Eclipse_Luna/Cake_IG/Keywords/add_bulk
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'C:\\WORKS\\WS\\Ecl...', 562)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'C:\\WORKS\\WS\\Ecl...', 562, Array)
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(934): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'C:\\WORKS\\WS\\Ecl...', 562, Array)
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Core\App.php(907): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
