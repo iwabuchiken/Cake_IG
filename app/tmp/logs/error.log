@@ -1558,3 +1558,24 @@ Stack Trace:
 #12 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(KeywordsController), Object(CakeRequest))
 #13 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #14 {main}
+2015-08-30 12:14:40 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /Eclipse_Luna/Cake_IG/keywords
+Stack Trace:
+#0 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Model\Datasource\DboSource.php(459): PDO->prepare('SELECT name FRO...', Array)
+#1 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Model\Datasource\DboSource.php(427): DboSource->_execute('SELECT name FRO...', Array)
+#2 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Model\Datasource\DboSource.php(669): DboSource->execute('SELECT name FRO...', Array, Array)
+#3 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Model\Datasource\Database\Sqlite.php(147): DboSource->fetchAll('SELECT name FRO...', false)
+#4 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Model\Model.php(1161): Sqlite->listSources()
+#5 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Model\Model.php(3644): Model->setSource('keywords')
+#6 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Model\Model.php(1387): Model->getDataSource()
+#7 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Model\Model.php(1483): Model->schema()
+#8 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Component\PaginatorComponent.php(400): Model->hasField('id')
+#9 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Component\PaginatorComponent.php(142): PaginatorComponent->validateSort(Object(Keyword), Array, Array)
+#10 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Controller.php(1086): PaginatorComponent->paginate('Keyword', Array, Array)
+#11 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\Controller\KeywordsController.php(43): Controller->paginate('Keyword')
+#12 [internal function]: KeywordsController->index()
+#13 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(KeywordsController), Array)
+#14 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#15 C:\WORKS\WS\Eclipse_Luna\Cake_IG\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(KeywordsController), Object(CakeRequest))
+#16 C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#17 {main}
