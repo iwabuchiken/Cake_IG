@@ -69,14 +69,32 @@ CREATE TABLE sens (
     
     kws			VARCHAR(50),
     
-    memo		TEXT
+    memo		TEXT,
+    
+    version		VARCHAR(20)
 	
 );
 
 DROP TABLE sens;
 
+ALTER TABLE sens RENAME TO sens_old;
+
+INSERT INTO sens 
+		(id,created_at,updated_at,text,kws,memo) 
+	SELECT
+		id,created_at,updated_at,text,kws,memo
+	FROM sens_old;
+
+SELECT * FROM sens;
+
+DROP TABLE sens_old;
+
+--------------------------------------------------
+
+
 #REF	http://razorsql.com/features/sqlite_add_column.html
 ALTER TABLE histories ADD updates VARCHAR(200);
+
 
 DROP TABLE admins;
 
