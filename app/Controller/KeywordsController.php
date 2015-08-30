@@ -91,6 +91,102 @@ class KeywordsController extends AppController {
 		
 	}//public function add()
 
+	public function add_bulk() {
+		if ($this->request->is('post')) {
+			
+			$this->Keyword->create();
+			
+			$words_str = $this->request->data['Keyword']['word'];
+			
+			$tokens = explode(" ", $words_str);
+			
+			$counter = 0;
+			
+			$len = count($tokens);
+			
+// 			debug($this->request->data['Keyword']);
+			
+// 			debug("genre => ".isset($this->request->data['Keyword']['genre_id']));
+			
+			for ($i = 0; $i < $len; $i++) {
+				
+				$this->Keyword->create();
+				
+				$time = Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
+				
+				$this->Keyword->created_at = $time;
+// 							Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
+				$this->Keyword->updated_at = $time;
+// 							Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
+
+				$this->Keyword->word = $tokens[$i];
+// 				$this->Keyword->word = "aaa";
+
+				$this->Keyword->rubi = 
+						Utils::conv_Word_2_Rubi_V2($this->Keyword->word);
+// 						Utils::conv_Word_2_Rubi($this->Keyword->word);
+// 						Utils::conv_Word_2_Rubi($this->request->data['Keyword']['word']);
+				
+				$this->Keyword->memo = 
+							$this->request->data['Keyword']['memo'];
+				
+				$this->Keyword->genre_id = 
+							isset($this->request->data['Keyword']['genre_id']) ? 
+								intval($this->request->data['Keyword']['genre_id']) : -1;
+// 							$this->request->data['Keyword']['genre_id'];
+				
+				$this->Keyword->type_id = 
+							isset($this->request->data['Keyword']['type_id']) ?
+								intval($this->request->data['Keyword']['type_id']) : -1;
+// 							$this->request->data['Keyword']['type_id'];
+				
+// 				debug($this->Keyword->word);
+// 				debug($this->Keyword->rubi);
+				
+				// save
+				if ($this->Keyword->save($this->Keyword)) {
+// 				if ($this->Keyword->save($this->request->data)) {
+
+					$counter += 1;
+	
+				}
+				
+			}//for ($i = 0; $i < $len; $i++)
+			
+			debug("counter => ".$counter);
+			
+// 			debug($tokens);
+			
+// 			debug($this->request->data['Keyword']['word']);
+			
+// 			$this->request->data['Keyword']['created_at'] =
+// 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
+			
+// 			$this->request->data['Keyword']['updated_at'] =
+// 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
+			
+// 			// ruby
+// // 			$this->Keyword->rubi = 
+// 			$this->request->data['Keyword']['rubi'] =
+// 						Utils::conv_Word_2_Rubi($this->request->data['Keyword']['word']);
+			
+// 			// save
+// 			if ($this->Keyword->save($this->request->data)) {
+				
+// 				$this->Session->setFlash(
+// 						__("Keyword saved => ".$this->request->data['Keyword']['word']));
+// // 				$this->Session->setFlash(__('Your keyword has been saved.'));
+// 				return $this->redirect(array('action' => 'index'));
+				
+// 			}
+// 			$this->Session->setFlash(__('Unable to add your keyword.'));
+			
+		} else {
+			
+		}
+		
+	}//public function add()
+
 	public function delete($id) {
 		/******************************
 	

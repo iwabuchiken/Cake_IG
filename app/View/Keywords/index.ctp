@@ -29,19 +29,28 @@
 
 <?php echo $this->Html->link("Add keyword",
 							array(
-								'controller' => 'keywords', 
-								'action' => 'add')
-							); 
-?>
-|
-<?php echo $this->Html->link("keyword mix",
+								'controller' => 'Keywords', 
+								'action' => 'add'),
 							array(
-								'controller' => 'keywords', 
+								'class'	=> 'button')
+							); 
+
+	echo $this->Html->link("keyword mix",
+							array(
+								'controller' => 'Keywords', 
 								'action'	=> 'get_keywords_mix_Main',
-								)
-// 								'action'	=> 'get_keywords_mix',
-// 								3)
-// 								'num'		=> 4)
+								),
+							array(
+									'class'	=> 'button')
+							); 
+
+	echo $this->Html->link("Add bulk",
+							array(
+								'controller' => 'Keywords', 
+								'action'	=> 'add_bulk',
+								),
+							array(
+									'class'	=> 'button')
 							); 
 ?>
 
