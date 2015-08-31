@@ -60,6 +60,7 @@ INSERT INTO keywords
 
 SELECT * FROM keywords;
 
+------------------------------------------------
 CREATE TABLE sens (
 	id			INTEGER PRIMARY KEY     AUTOINCREMENT	NOT NULL,
 	created_at	VARCHAR(30),
@@ -88,6 +89,38 @@ INSERT INTO sens
 SELECT * FROM sens;
 
 DROP TABLE sens_old;
+
+--------------------------------------------------
+
+------------------------------------------------
+CREATE TABLE sens_history (
+	id			INTEGER PRIMARY KEY     AUTOINCREMENT	NOT NULL,
+	created_at	VARCHAR(30),
+	updated_at	VARCHAR(30),
+	
+	db_id		INTEGER,
+	
+    version		VARCHAR(20),
+    
+    memo		TEXT
+	
+);
+
+DROP TABLE sens_history;
+
+ALTER TABLE sens_history RENAME TO sens_history_old;
+
+INSERT INTO sens_history 
+		(id,created_at,updated_at,text,kws,memo) 
+	SELECT
+		id,created_at,updated_at,text,kws,memo
+	FROM sens_history_old;
+
+SELECT * FROM sens_history;
+
+DROP TABLE sens_history_old;
+
+ALTER TABLE sens_history RENAME TO sens_histories;
 
 --------------------------------------------------
 
@@ -169,6 +202,32 @@ INSERT INTO sens
 	SELECT
 		id,created_at,updated_at,text,kws,memo
 	FROM sens_old;
+
+--------------------------------------
+------------------------------------
+CREATE TABLE sens_histories (
+	id			INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	created_at	VARCHAR(30),
+	updated_at	VARCHAR(30),
+	
+	db_id		INTEGER,
+	
+    version		VARCHAR(20),
+    
+    memo		TEXT
+	
+);
+
+DROP TABLE sens_histories;
+DROP TABLE sens_histories_old;
+
+RENAME TABLE sens_histories TO sens_histories_old;
+
+INSERT INTO sens_histories 
+		(id,created_at,updated_at,text,kws,memo) 
+	SELECT
+		id,created_at,updated_at,text,kws,memo
+	FROM sens_histories_old;
 
 --------------------------------------
 
