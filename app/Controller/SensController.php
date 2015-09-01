@@ -255,8 +255,35 @@ class SensController extends AppController {
 			$this->params->data['Sen']['updated_at'] =
 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
 				
+			/*******************************
+				save history
+			*******************************/
+			$result = Utils::save_SensHistory($sen);
+// 			$version_prev = $sen['Sen']['version'];
+
+			//debug
+			if ($result == true) {
+			
+				$msg = "sens history => saved";
+			
+			} else {
+			
+				$msg = "sens history => NOT saved";
+				
+			}//if ($result == true)
+			
+			Utils::write_Log(
+							Utils::get_dPath_Log(),
+							$msg,
+							__FILE__, __LINE__);
+				
+			
+			/*******************************
+				save
+			*******************************/
 			if ($this->Sen->save($this->request->data)) {
 	
+				
 				$this->Session->setFlash(__("Sen has been updated: id = ".$id));
 				
 				return $this->redirect(
@@ -272,6 +299,9 @@ class SensController extends AppController {
 			
 			// no param => set keyword variable
 			$this->set("sen", $sen);
+			
+// 			//debug
+// 			$result = Utils::save_SensHistory($sen);
 			
 		}//if (count($this->params->data) != 0)
 	

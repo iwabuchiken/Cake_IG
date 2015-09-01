@@ -2348,6 +2348,72 @@
 					
 		}
 	
+		public static function 
+		save_SensHistory($sen) {
+			/*******************************
+				model
+			*******************************/
+			$model = ClassRegistry::init('SensHistory');
+
+			$time = Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
+			
+			$model->create();
+			
+			// build param
+			$param = array('SensHistory' =>
+			
+					array(
+								
+							'created_at'	=> $time,
+							'updated_at'	=> $time,
+								
+							'db_id'			=> $sen['Sen']['id'],
+							'version'		=> $sen['Sen']['version'],
+							'memo'			=> $sen['Sen']['memo']
+					)
+			
+			);
+				
+// 			$model->created_at = $time;
+// // 			$model['SensHistory']['created_at'] = $time;
+			
+// 			$model->updated_at = $time;
+			
+// 			$model->db_id = $sen['Sen']['id'];
+			
+// 			$model->version = $sen['Sen']['version'];
+			
+// 			$model->memo = $sen['Sen']['memo'];
+			
+// 			debug($model);
+			
+// 			$model['SensHistory']['updated_at'] = $time;
+			
+// 			$model['SensHistory']['db_id'] = $sen['Sen']['id'];
+			
+// 			$model['SensHistory']['version'] = $sen['Sen']['version'];
+			
+// 			$model['SensHistory']['memo'] = $sen['Sen']['memo'];
+
+			/*******************************
+				save
+			*******************************/
+			if ($model->save($param)) {
+// 			if ($model->save()) {
+			
+				return true;
+			
+			} else {
+			
+				return false;
+				
+			}//if ($model->save())
+			
+			
+// 			$model->save();
+			
+		}//save_SensHistory
+		
 	}//class Utils
 	
 	

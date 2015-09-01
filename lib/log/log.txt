@@ -468,3 +468,22 @@
 [08/25/2015 09:49:20 : \app\Controller\SensController.php : 135] saved => aaaaa
 [08/25/2015 09:50:07 : \app\Controller\KeywordsController.php : 211] get_keywords_mix: num = 3
 [08/25/2015 09:50:08 : \app\Controller\KeywordsController.php : 300] get_keywords_mix => set 
+[09/01/2015 11:02:56 : \app\Controller\KeywordsController.php : 307] get_keywords_mix: num = 3
+[09/01/2015 11:02:56 : \app\Controller\KeywordsController.php : 396] get_keywords_mix => set 
+[09/01/2015 11:07:09 : \app\Controller\SenshistorysController.php : 107] add() => starts
+[09/01/2015 11:07:09 : \app\Controller\SenshistorysController.php : 166] no post method
+[09/01/2015 11:10:56 : \app\Controller\SenshistorysController.php : 107] add() => starts
+[09/01/2015 11:10:56 : \app\Controller\SenshistorysController.php : 173] no post method
+[09/01/2015 11:11:13 : \app\Controller\SenshistorysController.php : 107] add() => starts
+[09/01/2015 11:11:13 : \app\Controller\SenshistorysController.php : 173] no post method
+[09/01/2015 11:11:33 : \app\Controller\SenshistorysController.php : 107] add() => starts
+[09/01/2015 11:11:33 : \app\Controller\SenshistorysController.php : 173] no post method
+[09/01/2015 11:14:13 : \app\Controller\SenshistorysController.php : 107] add() => starts
+[09/01/2015 11:14:13 : \app\Controller\SenshistorysController.php : 173] no post method
+[09/01/2015 11:29:40 : \app\Controller\SensController.php : 278] sens history => NOT saved
+[09/01/2015 11:36:10 : \app\Controller\SensController.php : 278] sens history => saved
+[09/01/2015 11:38:22 : \app\Controller\SensController.php : 278] sens history => NOT saved
+[09/01/2015 11:39:04 : \app\Controller\SensController.php : 278] sens history => saved
+[09/01/2015 11:39:39 : \app\Controller\SensController.php : 278] sens history => saved
+[09/01/2015 11:41:52 : \app\Controller\SensController.php : 278] sens history => saved
+[09/01/2015 11:42:12 : \app\Controller\SensController.php : 278] sens history => saved

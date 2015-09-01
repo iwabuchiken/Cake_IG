@@ -109,15 +109,15 @@ class SensHistorysController extends AppController {
 		// add instance
 		if ($this->request->is('post')) {
 			
-			$this->Sen->create();
+			$this->SensHistory->create();
 			
-			$this->request->data['Sen']['created_at'] =
+			$this->request->data['SensHistory']['created_at'] =
 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
 			
-			$this->request->data['Sen']['updated_at'] =
+			$this->request->data['SensHistory']['updated_at'] =
 						Utils::get_CurrentTime2(CONS::$timeLabelTypes["rails"]);
 			
-			if ($this->Sen->save($this->request->data)) {
+			if ($this->SensHistory->save($this->request->data)) {
 				
 // 				$this->Session->setFlash(
 // 						__("Sen saved => ".$this->request->data['Sen']['word']));
@@ -128,7 +128,12 @@ class SensHistorysController extends AppController {
 				$this->set("response", "saved");
 				
 				//debug
-				$msg = "saved => ".$this->request->data['Sen']['text'];
+				$senHistory = $this->request->data['SensHistory'];
+				
+				$msg = "saved => ".$senHistory['db_id']
+// 				$msg = "saved => ".$this->request->data['SensHistory']['db_id']
+						."/"
+						.$senHistory['version'];
 				
 				Utils::write_Log(
 							Utils::get_dPath_Log(),
@@ -143,7 +148,9 @@ class SensHistorysController extends AppController {
 				$this->set("response", "not saved");
 				
 				//debug
-				$msg = "NOT saved => ".$this->request->data['Sen']['text'];
+				$msg = "NOT saved => ".$senHistory['db_id']
+						."/"
+						.$senHistory['version'];
 				
 				Utils::write_Log(
 						Utils::get_dPath_Log(),
@@ -164,6 +171,11 @@ class SensHistorysController extends AppController {
 						Utils::get_dPath_Log(),
 						$msg,
 						__FILE__, __LINE__);
+			
+// 			// test		//=> w
+// 			$this->SensHistory->create();
+			
+// 			debug($this->SensHistory);
 			
 		}
 		

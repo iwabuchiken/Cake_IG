@@ -26,6 +26,7 @@ copy dev.db C:\WORKS\WS\Eclipse_Luna\Cake_IG\app\webroot\development.sqlite3
 SELECT * FROM keywords;
 SELECT id,rubi FROM keywords;
 SELECT * FROM sens;
+SELECT * FROM sens_histories;
 
 
 [sqlite3]======================================
